@@ -4,5 +4,5 @@
 **Current phase:** Phase 1 — Foundation & Topic Browser  
 **Phase status:** done ✅  
 
-**Last action:** Phase 1 implemented — glassmorphism topic browser with SES syllabus  
-**Next action:** Discuss phase 2 implementation decisions (flashcards)
+**Last action:** Phase 2 implemented — 63 flashcards with flip animation and spaced repetition  
+**Next action:** Discuss phase 3 implementation decisions (quiz mode)

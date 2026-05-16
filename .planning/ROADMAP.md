@@ -6,7 +6,7 @@
 **Requirements:** REQ-001  
 
 ## Phase 2 — Flashcards
-**Status:** pending  
+**Status:** done ✅  
 **Goal:** Flashcard system with flip animation, confidence rating, and localStorage persistence.  
 **Requirements:** REQ-002  
 
