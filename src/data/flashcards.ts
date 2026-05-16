@@ -426,4 +426,304 @@ export const flashcards: Flashcard[] = [
     question: 'Qu\'est-ce que le marché des quotas de carbone ?',
     answer: 'Système de plafonnement et échange (cap-and-trade) où un plafond d\'émissions est fixé et des permis échangeables sont distribués. Les entreprises peuvent vendre leurs quotas excédentaires ou en acheter. L\'objectif est de réduire les émissions au moindre coût.',
   },
+
+  // ── Additional cards ──
+
+  // Fondements (suite)
+  {
+    id: 'fc-fondements-4',
+    topicId: 'fondements',
+    question: 'Qu\'est-ce que le circuit économique ?',
+    answer: 'Représentation simplifiée des flux entre agents économiques (ménages, entreprises, banques, État, reste du monde). Les flux réels (biens, services, travail) et monétaires (revenus, dépenses) circulent en sens inverse entre les agents.',
+  },
+  {
+    id: 'fc-fondements-5',
+    topicId: 'fondements',
+    question: 'Qu\'est-ce que la loi des rendements décroissants ?',
+    answer: 'Principe selon lequel l\'augmentation d\'un facteur de production (travail, capital) à quantité constante des autres facteurs finit par produire des augmentations de plus en plus faibles, puis négatives.',
+  },
+
+  // Croissance (suite)
+  {
+    id: 'fc-croissance-4',
+    topicId: 'croissance',
+    question: 'Qu\'est-ce que la croissance inclusive ?',
+    answer: 'Croissance économique qui bénéficie à l\'ensemble de la population et réduit les inégalités. Elle combine création de richesses, réduction de la pauvreté, protection sociale et opportunités égales pour tous.',
+  },
+  {
+    id: 'fc-croissance-5',
+    topicId: 'croissance',
+    question: 'Qu\'est-ce que le paradoxe de Solow ?',
+    answer: '"On voit des ordinateurs partout sauf dans les statistiques de productivité" (Robert Solow, 1987). Les investissements massifs dans les technologies de l\'information n\'ont pas immédiatement augmenté la productivité mesurée.',
+  },
+
+  // Chômage (suite)
+  {
+    id: 'fc-chomage-4',
+    topicId: 'chomage',
+    question: 'Qu\'est-ce que le taux d\'emploi ?',
+    answer: 'Proportion de personnes en emploi parmi la population en âge de travailler (15-64 ans). Contrairement au taux de chômage, il inclut les inactifs. Un taux d\'emploi élevé indique un marché du travail dynamique.',
+  },
+  {
+    id: 'fc-chomage-5',
+    topicId: 'chomage',
+    question: 'Qu\'est-ce que les politiques d\'activation du marché du travail ?',
+    answer: 'Mesures visant à rendre le retour à l\'emploi plus attractif et efficace : formation professionnelle, accompagnement renforcé, aides à l\'embauche, et conditionnalité des indemnités chômage à la recherche active.',
+  },
+
+  // Politiques économiques (suite)
+  {
+    id: 'fc-politiques-4',
+    topicId: 'politiques-economiques',
+    question: 'Qu\'est-ce que la règle d\'or budgétaire ?',
+    answer: 'Principe selon lequel un État ne devrait emprunter que pour financer des investissements publics (qui bénéficient aux générations futures), et non pour financer des dépenses de fonctionnement courantes.',
+  },
+  {
+    id: 'fc-politiques-5',
+    topicId: 'politiques-economiques',
+    question: 'Qu\'est-ce que le multiplicateur keynésien ?',
+    answer: 'Concept de John Maynard Keynes : une augmentation des dépenses publiques ou des investissements génère une hausse plus que proportionnelle du revenu national, via des effets de relance en cascade (consommation → production → emploi).',
+  },
+
+  // Monnaie (suite)
+  {
+    id: 'fc-monnaie-4',
+    topicId: 'monnaie',
+    question: 'Qu\'est-ce que la masse monétaire ?',
+    answer: 'Quantité totale de monnaie en circulation dans une économie. Elle est mesurée par des agrégats (M1, M2, M3) qui incluent pièces, billets, dépôts bancaires et placements liquides. La BCE contrôle la masse monétaire via ses taux directeurs.',
+  },
+  {
+    id: 'fc-monnaie-5',
+    topicId: 'monnaie',
+    question: 'Qu\'est-ce que l\'inflation par la demande ?',
+    answer: 'Inflation causée par un excès de demande par rapport à l\'offre disponible. Quand la demande globale dépasse les capacités de production, les prix augmentent. Typique des périodes de reprise économique rapide.',
+  },
+
+  // Commerce international (suite)
+  {
+    id: 'fc-commerce-4',
+    topicId: 'commerce-international',
+    question: 'Qu\'est-ce que le dumping social ?',
+    answer: 'Pratique consistant à abaisser les coûts de production en réduisant les protections sociales, les salaires ou les droits des travailleurs pour gagner en compétitivité à l\'international. Souvent critiqué dans le cadre de la mondialisation.',
+  },
+  {
+    id: 'fc-commerce-5',
+    topicId: 'commerce-international',
+    question: 'Qu\'est-ce que le commerce intra-branche ?',
+    answer: 'Échanges internationaux de produits appartenant à la même branche industrielle (ex : la France exporte et importe des voitures). Il domine le commerce entre pays développés et s\'explique par la différenciation des produits.',
+  },
+
+  // Inégalités (suite)
+  {
+    id: 'fc-inegalites-4',
+    topicId: 'inegalites',
+    question: 'Qu\'est-ce que le taux de pauvreté ?',
+    answer: 'Proportion de la population vivant en dessous du seuil de pauvreté. En France, le seuil est fixé à 60% du revenu médian. En 2022, environ 14% de la population française vivait sous le seuil de pauvreté.',
+  },
+  {
+    id: 'fc-inegalites-5',
+    topicId: 'inegalites',
+    question: 'Qu\'est-ce que la courbe de Lorenz ?',
+    answer: 'Représentation graphique de la répartition des revenus ou des patrimoines. Elle compare le pourcentage cumulé de la population (axe x) au pourcentage cumulé des revenus (axe y). Plus elle s\'éloigne de la diagonale, plus les inégalités sont fortes.',
+  },
+
+  // ── Sociologie (suite) ──
+
+  // Socialisation (suite)
+  {
+    id: 'fc-socialisation-4',
+    topicId: 'socialisation',
+    question: 'Qu\'est-ce que la socialisation anticipatrice ?',
+    answer: 'Concept de Robert Merton : processus par lequel un individu adopte les valeurs et normes d\'un groupe auquel il souhaite appartenir (groupe de référence), avant même d\'en faire partie. Exemple : un étudiant qui adopte les codes du milieu professionnel visé.',
+  },
+  {
+    id: 'fc-socialisation-5',
+    topicId: 'socialisation',
+    question: 'Qu\'est-ce que l\'habitus selon Bourdieu ?',
+    answer: 'Système de dispositions durables et transposables qui intègre les expériences passées et fonctionne comme une matrice de perceptions, d\'appréciations et d\'actions. Il est le produit de la socialisation et guide les comportements de façon inconsciente.',
+  },
+
+  // Liens sociaux (suite)
+  {
+    id: 'fc-liens-4',
+    topicId: 'liens-sociaux',
+    question: 'Qu\'est-ce que la sociabilité ?',
+    answer: 'Ensemble des relations sociales qu\'un individu entretient avec d\'autres (famille, amis, collègues, voisins). La sociabilité varie selon les milieux sociaux : les classes supérieures ont généralement des réseaux plus étendus et diversifiés.',
+  },
+  {
+    id: 'fc-liens-5',
+    topicId: 'liens-sociaux',
+    question: 'Qu\'est-ce que la théorie des réseaux sociaux ?',
+    answer: 'Approche sociologique qui analyse les relations entre individus comme un réseau de liens (Granovetter, Milgram). Les liens faibles (connaissances) sont souvent plus utiles que les liens forts pour trouver un emploi (force des liens faibles).',
+  },
+
+  // Stratification (suite)
+  {
+    id: 'fc-stratification-4',
+    topicId: 'stratification',
+    question: 'Comment l\'INSEE définit-elle les catégories socioprofessionnelles ?',
+    answer: 'La nomenclature des PCS (Professions et Catégories Socioprofessionnelles) classe la population en 8 groupes : agriculteurs, artisans/commerçants, cadres, professions intermédiaires, employés, ouvriers, retraités, et inactifs. Elle permet d\'analyser la structure sociale.',
+  },
+  {
+    id: 'fc-stratification-5',
+    topicId: 'stratification',
+    question: 'Qu\'est-ce que l\'homogamie sociale ?',
+    answer: 'Tendance des individus à choisir un conjoint appartenant au même milieu social qu\'eux. L\'homogamie est un indicateur de la fermeture des groupes sociaux et contribue à la reproduction sociale.',
+  },
+
+  // Inégalités sociales (suite)
+  {
+    id: 'fc-inegalites-sociales-4',
+    topicId: 'inegalites-sociales',
+    question: 'Qu\'est-ce que la discrimination positive ?',
+    answer: 'Politique visant à favoriser certains groupes victimes de discriminations systémiques pour rétablir l\'égalité des chances. Exemples : les zones d\'éducation prioritaires (ZEP), les bourses sur critères sociaux, les quotas dans certaines filières.',
+  },
+  {
+    id: 'fc-inegalites-sociales-5',
+    topicId: 'inegalites-sociales',
+    question: 'Qu\'est-ce que l\'intersectionnalité ?',
+    answer: 'Concept de Kimberlé Crenshaw : les discriminations se cumulent et s\'entrecroisent. Une personne peut subir simultanément plusieurs formes de discrimination (genre, origine ethnique, classe sociale) qui interagissent de façon spécifique.',
+  },
+
+  // Mobilité (suite)
+  {
+    id: 'fc-mobilite-4',
+    topicId: 'mobilite',
+    question: 'Qu\'est-ce que la mobilité observée et la fluidité sociale ?',
+    answer: 'La mobilité observée est le taux brut de mobilité mesuré dans les tables. La fluidité sociale (ou mobilité relative) mesure les chances de mobilité à origine sociale donnée, en neutralisant les effets de la structure des emplois.',
+  },
+  {
+    id: 'fc-mobilite-5',
+    topicId: 'mobilite',
+    question: 'Qu\'est-ce que le déclassement ?',
+    answer: 'Situation où un individu occupe une position sociale inférieure à celle de ses parents ou à celle attendue compte tenu de son niveau de diplôme. Phénomène croissant avec la massification scolaire et la hausse du niveau d\'éducation.',
+  },
+
+  // Travail (suite)
+  {
+    id: 'fc-travail-4',
+    topicId: 'travail',
+    question: 'Qu\'est-ce que le taylorisme ?',
+    answer: 'Organisation scientifique du travail (OST) théorisée par Frederick Taylor au début du XXe siècle : division horizontale (parcellisation des tâches) et verticale (séparation conception/exécution), chronométrage, salaire au rendement.',
+  },
+  {
+    id: 'fc-travail-5',
+    topicId: 'travail',
+    question: 'Qu\'est-ce que l\'économie des plateformes ?',
+    answer: 'Modèle économique où des plateformes numériques (Uber, Deliveroo, Fiverr) mettent en relation offreurs et demandeurs de services. Elle brouille la frontière entre salariat et indépendance, et pose des défis en matière de droit du travail et protection sociale.',
+  },
+
+  // Déviance (suite)
+  {
+    id: 'fc-deviance-4',
+    topicId: 'deviance',
+    question: 'Qu\'est-ce que la carrière déviante selon Becker ?',
+    answer: 'Processus par lequel un individu devient progressivement déviant : passage à l\'acte (déviance primaire), étiquetage par la société, adoption de l\'identité déviante (déviance secondaire), et intégration dans une sous-culture déviante.',
+  },
+  {
+    id: 'fc-deviance-5',
+    topicId: 'deviance',
+    question: 'Qu\'est-ce que la prévention situationnelle ?',
+    answer: 'Approche de la criminologie qui vise à réduire les occasions de commettre un délit en modifiant l\'environnement immédiat (éclairage public, caméras de surveillance, serrures renforcées). Elle ne s\'attaque pas aux causes sociales de la déviance.',
+  },
+
+  // ── Regards Croisés (suite) ──
+
+  // Développement (suite)
+  {
+    id: 'fc-developpement-4',
+    topicId: 'developpement',
+    question: 'Qu\'est-ce que la soutenabilité forte et faible ?',
+    answer: 'La soutenabilité faible considère que les capitaux (naturel, physique, humain) sont substituables : on peut détruire du capital naturel si on le compense par du capital technique. La soutenabilité forte pose que certains biens naturels sont irremplaçables.',
+  },
+  {
+    id: 'fc-developpement-5',
+    topicId: 'developpement',
+    question: 'Qu\'est-ce que l\'indice de Gini mondial ?',
+    answer: 'Mesure des inégalités de revenus à l\'échelle mondiale. Bien que les inégalités entre pays aient diminué (grâce à la croissance en Chine et Inde), les inégalités internes aux pays ont augmenté dans de nombreuses régions.',
+  },
+
+  // Emploi (suite)
+  {
+    id: 'fc-emploi-4',
+    topicId: 'emploi',
+    question: 'Qu\'est-ce que le halo du chômage ?',
+    answer: 'Ensemble des personnes qui sont sans emploi mais ne sont pas comptées comme chômeuses au sens du BIT : personnes découragées qui ont arrêté de chercher, personnes disponibles mais qui ne cherchent pas activement, ou qui travaillent quelques heures par semaine.',
+  },
+  {
+    id: 'fc-emploi-5',
+    topicId: 'emploi',
+    question: 'Qu\'est-ce que le contrat de travail unique ?',
+    answer: 'Proposition de réforme visant à remplacer la multiplicité des contrats (CDI, CDD, intérim) par un contrat unique avec des droits progressifs (les indemnités de licenciement augmentent avec l\'ancienneté). Objectif : sécuriser les parcours tout en flexibilisant le marché.',
+  },
+
+  // Protection sociale (suite)
+  {
+    id: 'fc-protection-4',
+    topicId: 'protection-sociale',
+    question: 'Qu\'est-ce que la protection sociale contributive et non-contributive ?',
+    answer: 'La protection contributive (assurance sociale) est financée par les cotisations sociales et réservée à ceux qui cotisent (retraite, assurance maladie). La protection non-contributive (assistance) est financée par l\'impôt et ouverte à tous sous condition de ressources (RSA, CMU).',
+  },
+  {
+    id: 'fc-protection-5',
+    topicId: 'protection-sociale',
+    question: 'Qu\'est-ce que le paradoxe de la redistribution ?',
+    answer: 'Observation de Korpi et Palme : les systèmes de protection sociale les plus universalistes (qui bénéficient à tous) sont aussi les plus redistributifs, car ils bénéficient d\'un soutien politique large. Les systèmes ciblés sur les plus pauvres sont souvent moins généreux car moins soutenus.',
+  },
+
+  // Action publique (suite)
+  {
+    id: 'fc-action-4',
+    topicId: 'action-publique',
+    question: 'Qu\'est-ce que le policy feedback ?',
+    answer: 'Concept de Pierson : les politiques publiques créent des effets de retour sur le système politique. Les bénéficiaires d\'une politique (ex : retraités, allocataires) deviennent des soutiens qui la défendent, rendant difficile tout retour en arrière.',
+  },
+  {
+    id: 'fc-action-5',
+    topicId: 'action-publique',
+    question: 'Qu\'est-ce que l\'instrumentation de l\'action publique ?',
+    answer: 'Étude des instruments utilisés par les pouvoirs publics pour mettre en œuvre les politiques : instruments réglementaires (lois, décrets), économiques (taxes, subventions), incitatifs (campagnes, nudges), et conventionnels (labels, chartes).',
+  },
+
+  // Organisations (suite)
+  {
+    id: 'fc-organisations-4',
+    topicId: 'organisations',
+    question: 'Qu\'est-ce que la gouvernance d\'entreprise ?',
+    answer: 'Ensemble des mécanismes qui régissent le fonctionnement et le contrôle des entreprises : conseil d\'administration, assemblée générale des actionnaires, comités d\'audit. Elle vise à aligner les intérêts des dirigeants sur ceux des actionnaires (théorie de l\'agence).',
+  },
+  {
+    id: 'fc-organisations-5',
+    topicId: 'organisations',
+    question: 'Qu\'est-ce que l\'économie sociale et solidaire (ESS) ?',
+    answer: 'Secteur économique regroupant les structures qui poursuivent une utilité sociale plutôt qu\'un profit maximal : associations, coopératives, mutuelles, fondations. Leurs principes : gouvernance démocratique, lucrativité limitée, gestion participative.',
+  },
+
+  // Comportementale (suite)
+  {
+    id: 'fc-comportementale-4',
+    topicId: 'comportementale',
+    question: 'Qu\'est-ce que l\'aversion aux pertes ?',
+    answer: 'Biais cognitif identifié par Kahneman et Tversky : les individus ressentent plus fortement la douleur d\'une perte que le plaisir d\'un gain équivalent (environ 2 fois plus). Ce biais explique des comportements comme la résistance à vendre des actions à perte.',
+  },
+  {
+    id: 'fc-comportementale-5',
+    topicId: 'comportementale',
+    question: 'Qu\'est-ce que le biais de confirmation ?',
+    answer: 'Tendance à rechercher, interpréter et mémoriser les informations qui confirment nos croyances préexistantes, tout en ignorant ou minimisant les informations qui les contredisent. Ce biais affecte les décisions économiques et politiques.',
+  },
+
+  // Environnement (suite)
+  {
+    id: 'fc-environnement-4',
+    topicId: 'environnement',
+    question: 'Qu\'est-ce que l\'économie circulaire ?',
+    answer: 'Modèle économique qui vise à produire des biens et services de manière durable en limitant la consommation de ressources et la production de déchets (réduire, réutiliser, recycler). Elle s\'oppose au modèle linéaire (extraire, produire, jeter).',
+  },
+  {
+    id: 'fc-environnement-5',
+    topicId: 'environnement',
+    question: 'Qu\'est-ce que la taxe pigouvienne ?',
+    answer: 'Taxe proposée par Arthur Pigou visant à internaliser les externalités négatives en faisant payer au pollueur le coût social de la pollution. Le montant de la taxe doit être égal au coût marginal externe pour inciter les agents à réduire leurs émissions.',
+  },
 ]
