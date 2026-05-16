@@ -1,7 +1,7 @@
 # Roadmap — bac_ses
 
 ## Phase 1 — Foundation & Topic Browser
-**Status:** pending  
+**Status:** done ✅  
 **Goal:** Set up the app shell, topic data model, and topic browser UI. Hard-code the SES syllabus as structured data.  
 **Requirements:** REQ-001  
 
