@@ -26,6 +26,6 @@
 **Requirements:** REQ-005  
 
 ## Phase 6 — Exam Simulation (stretch)
-**Status:** pending  
+**Status:** done ✅  
 **Goal:** Timed exam-mode with BAC-style prompts and countdown timer.  
 **Requirements:** REQ-006
