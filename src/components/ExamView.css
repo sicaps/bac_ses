@@ -120,49 +120,72 @@
   max-width: 380px;
 }
 
-.exam-duration-picker {
+.exam-preset-grid {
   display: flex;
   flex-direction: column;
   gap: 10px;
   width: 100%;
 }
 
-.exam-duration-label {
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--text-dim);
-}
-
-.exam-duration-options {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.exam-duration-btn {
+.exam-preset-card {
   all: unset;
   cursor: pointer;
-  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px;
   border-radius: var(--radius-sm);
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--text);
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.exam-duration-btn:hover {
-  background: rgba(255, 255, 255, 0.08);
+.exam-preset-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateX(4px);
 }
 
-.exam-duration-btn.exam-selected {
-  color: var(--text-h);
-  background: rgba(99, 102, 241, 0.15);
+.exam-preset-card.exam-preset-selected {
+  background: rgba(99, 102, 241, 0.08);
   border-color: rgba(99, 102, 241, 0.3);
+}
+
+.exam-preset-icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+  width: 44px;
+  text-align: center;
+}
+
+.exam-preset-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.exam-preset-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-h);
+  margin-bottom: 2px;
+}
+
+.exam-preset-desc {
+  font-size: 0.8rem;
+  color: var(--text);
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.exam-preset-meta {
+  display: flex;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
 }
 
 .exam-start-btn {
@@ -610,6 +633,7 @@
   .exam-option { padding: 14px; }
   .exam-option-text { font-size: 0.85rem; }
   .exam-setup-card { padding: 32px 20px; }
-  .exam-duration-options { gap: 6px; }
-  .exam-duration-btn { padding: 8px 14px; font-size: 0.85rem; }
+  .exam-preset-card { padding: 14px; }
+  .exam-preset-icon { font-size: 1.4rem; width: 36px; }
+  .exam-preset-name { font-size: 0.9rem; }
 }

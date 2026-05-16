@@ -726,4 +726,682 @@ export const flashcards: Flashcard[] = [
     question: 'Qu\'est-ce que la taxe pigouvienne ?',
     answer: 'Taxe proposée par Arthur Pigou visant à internaliser les externalités négatives en faisant payer au pollueur le coût social de la pollution. Le montant de la taxe doit être égal au coût marginal externe pour inciter les agents à réduire leurs émissions.',
   },
+
+  // ── Batch 3: 5 additional cards per topic ──
+
+  // Fondements (6-10)
+  {
+    id: 'fc-fondements-6',
+    topicId: 'fondements',
+    question: 'Qu\'est-ce que la valeur ajoutée ?',
+    answer: 'La valeur ajoutée est la richesse créée par une unité productive. Elle se calcule en soustrayant la valeur des consommations intermédiaires (matières premières, services) de la valeur de la production. Elle est répartie entre salaires, impôts, profits et investissements.',
+  },
+  {
+    id: 'fc-fondements-7',
+    topicId: 'fondements',
+    question: 'Qu\'est-ce que la demande globale ?',
+    answer: 'La demande globale est la somme des dépenses prévues par les agents économiques : consommation des ménages, investissement des entreprises, dépenses publiques et exportations nettes. Son niveau détermine la production et l\'emploi à court terme.',
+  },
+  {
+    id: 'fc-fondements-8',
+    topicId: 'fondements',
+    question: 'Qu\'est-ce que l\'offre globale ?',
+    answer: 'L\'offre globale représente la quantité totale de biens et services que les entreprises sont prêtes à produire et vendre à un niveau de prix donné. Elle dépend des coûts de production, de la productivité et des anticipations des entreprises.',
+  },
+  {
+    id: 'fc-fondements-9',
+    topicId: 'fondements',
+    question: 'Qu\'est-ce que l\'équilibre de marché ?',
+    answer: 'Situation où la quantité offerte égale la quantité demandée à un prix donné (prix d\'équilibre). À ce prix, il n\'y a ni excédent ni pénurie. Le marché est dit « équilibré » car les plans des offreurs et des demandeurs coïncident.',
+  },
+  {
+    id: 'fc-fondements-10',
+    topicId: 'fondements',
+    question: 'Qu\'est-ce que la spécialisation économique ?',
+    answer: 'Concentration d\'un agent, d\'une région ou d\'un pays sur la production d\'un nombre limité de biens ou services pour lesquels il dispose d\'un avantage comparatif. Elle permet des gains de productivité et d\'efficacité grâce à l\'échange.',
+  },
+
+  // Croissance (6-10)
+  {
+    id: 'fc-croissance-6',
+    topicId: 'croissance',
+    question: 'Qu\'est-ce que la croissance endogène ?',
+    answer: 'Théorie de la croissance (Romer, Lucas) selon laquelle la croissance est auto-entretenue par l\'accumulation de capital humain, la recherche-développement et les infrastructures publiques. L\'investissement dans ces facteurs génère des externalités positives qui stimulent l\'innovation.',
+  },
+  {
+    id: 'fc-croissance-7',
+    topicId: 'croissance',
+    question: 'Qu\'est-ce que la destruction créatrice ?',
+    answer: 'Concept de Joseph Schumpeter : le progrès technique provoque la disparition d\'activités anciennes (destruction) et la création de nouvelles activités plus productives (création). Ce processus est le moteur du dynamisme économique à long terme.',
+  },
+  {
+    id: 'fc-croissance-8',
+    topicId: 'croissance',
+    question: 'Qu\'est-ce que le capital humain ?',
+    answer: 'Ensemble des connaissances, compétences et aptitudes accumulées par un individu qui augmentent sa productivité potentielle. L\'éducation, la formation professionnelle et l\'expérience sont les principaux moyens d\'accumulation du capital humain (Becker, Schultz).',
+  },
+  {
+    id: 'fc-croissance-9',
+    topicId: 'croissance',
+    question: 'Qu\'est-ce que les gains de productivité ?',
+    answer: 'Augmentation de la quantité produite par unité de facteur utilisé (travail ou capital). Ils proviennent du progrès technique, de l\'amélioration de l\'organisation du travail et de l\'augmentation du capital par tête. Ils sont la source principale de la croissance économique.',
+  },
+  {
+    id: 'fc-croissance-10',
+    topicId: 'croissance',
+    question: 'Qu\'est-ce que la trappe à la stagnation ?',
+    answer: 'Situation décrite par Alvin Hansen puis Larry Summers : une économie peut connaître une stagnation prolongée malgré des taux d\'intérêt très bas, en raison d\'une insuffisance persistante de la demande globale et d\'un excès d\'épargne sur l\'investissement.',
+  },
+
+  // Chômage (6-10)
+  {
+    id: 'fc-chomage-6',
+    topicId: 'chomage',
+    question: 'Qu\'est-ce que le taux d\'activité ?',
+    answer: 'Proportion de la population en âge de travailler (15-64 ans) qui est soit en emploi, soit au chômage (population active). Un taux d\'activité élevé reflète une forte participation au marché du travail.',
+  },
+  {
+    id: 'fc-chomage-7',
+    topicId: 'chomage',
+    question: 'Qu\'est-ce que le chômage volontaire ?',
+    answer: 'Situation où un individu choisit de ne pas travailler au salaire en vigueur, soit parce qu\'il estime que son salaire de réservation est supérieur au salaire proposé, soit parce qu\'il préfère le loisir ou les allocations au travail.',
+  },
+  {
+    id: 'fc-chomage-8',
+    topicId: 'chomage',
+    question: 'Qu\'est-ce que la théorie de l\'appariement (matching) ?',
+    answer: 'Modèle de Pissarides, Mortensen et Diamond : le chômage résulte des frictions sur le marché du travail où employeurs et chômeurs cherchent à s\'apparier. Plus les qualifications sont hétérogènes, plus le processus d\'appariement est long.',
+  },
+  {
+    id: 'fc-chomage-9',
+    topicId: 'chomage',
+    question: 'Qu\'est-ce que l\'effet de file d\'attente sur le marché du travail ?',
+    answer: 'Lorsque le nombre de candidats qualifiés dépasse le nombre de postes disponibles, les employeurs peuvent embaucher des surqualifiés, repoussant les moins qualifiés vers le bas de la file d\'attente, augmentant le chômage pour les moins diplômés.',
+  },
+  {
+    id: 'fc-chomage-10',
+    topicId: 'chomage',
+    question: 'Qu\'est-ce que la courbe de Phillips ?',
+    answer: 'Relation empirique montrant une corrélation négative entre le taux de chômage et le taux d\'inflation. À court terme, une baisse du chômage s\'accompagne d\'une hausse de l\'inflation. Cette relation a été remise en cause dans les années 1970 avec la stagflation.',
+  },
+
+  // Politiques économiques (6-10)
+  {
+    id: 'fc-politiques-6',
+    topicId: 'politiques-economiques',
+    question: 'Qu\'est-ce que la relance budgétaire ?',
+    answer: 'Politique économique visant à stimuler l\'activité par une augmentation des dépenses publiques ou une baisse des impôts. Elle repose sur l\'idée keynésienne que l\'État peut compenser une insuffisance de la demande privée en période de récession.',
+  },
+  {
+    id: 'fc-politiques-7',
+    topicId: 'politiques-economiques',
+    question: 'Qu\'est-ce que la politique de l\'offre ?',
+    answer: 'Politique économique visant à stimuler la croissance en améliorant les conditions de production des entreprises : baisse des charges et impôts, déréglementation, flexibilisation du marché du travail. Elle mise sur l\'investissement et l\'innovation plutôt que sur la demande.',
+  },
+  {
+    id: 'fc-politiques-8',
+    topicId: 'politiques-economiques',
+    question: 'Qu\'est-ce que la règle de Taylor ?',
+    answer: 'Règle de politique monétaire proposée par John Taylor : la banque centrale ajuste ses taux d\'intérêt en fonction de l\'écart d\'inflation par rapport à la cible et de l\'écart de production par rapport au potentiel. Elle guide les décisions de politique monétaire.',
+  },
+  {
+    id: 'fc-politiques-9',
+    topicId: 'politiques-economiques',
+    question: 'Qu\'est-ce que la politique monétaire non conventionnelle ?',
+    answer: 'Mesures prises par une banque centrale quand les taux directeurs sont proches de zéro et inefficaces : quantitative easing (achats massifs d\'actifs), taux négatifs, forward guidance (engagement sur la politique future). Utilisées après 2008 et 2020.',
+  },
+  {
+    id: 'fc-politiques-10',
+    topicId: 'politiques-economiques',
+    question: 'Qu\'est-ce que le policy mix ?',
+    answer: 'Combinaison des politiques monétaire et budgétaire pour atteindre les objectifs économiques (croissance, emploi, stabilité des prix). Un policy mix cohérent suppose une coordination entre la banque centrale et le gouvernement.',
+  },
+
+  // Monnaie (6-10)
+  {
+    id: 'fc-monnaie-6',
+    topicId: 'monnaie',
+    question: 'Qu\'est-ce que la monnaie fiduciaire ?',
+    answer: 'Monnaie qui n\'a pas de valeur intrinsèque mais qui est acceptée comme moyen de paiement parce qu\'elle est garantie par l\'État et la confiance des agents. Il s\'agit des pièces et billets, dont la valeur faciale dépasse largement la valeur du métal.',
+  },
+  {
+    id: 'fc-monnaie-7',
+    topicId: 'monnaie',
+    question: 'Qu\'est-ce que la monnaie scripturale ?',
+    answer: 'Monnaie dématérialisée inscrite sur les comptes bancaires et utilisée par chèques, virements et paiements électroniques. Elle représente aujourd\'hui plus de 90% de la masse monétaire en circulation dans les économies développées.',
+  },
+  {
+    id: 'fc-monnaie-8',
+    topicId: 'monnaie',
+    question: 'Qu\'est-ce que le multiplicateur de crédit ?',
+    answer: 'Mécanisme par lequel la création monétaire par les banques dépasse le montant initial des dépôts. Si le taux de réserves obligatoires est de 10%, une banque peut créer 9 fois le montant d\'un dépôt initial par l\'octroi de crédits successifs.',
+  },
+  {
+    id: 'fc-monnaie-9',
+    topicId: 'monnaie',
+    question: 'Qu\'est-ce que l\'inflation sous-jacente ?',
+    answer: 'Mesure de l\'inflation qui exclut les prix les plus volatils (énergie, produits frais) pour dégager une tendance de fond. Elle est suivie par les banques centrales pour évaluer l\'évolution durable des prix et ajuster leur politique monétaire.',
+  },
+  {
+    id: 'fc-monnaie-10',
+    topicId: 'monnaie',
+    question: 'Qu\'est-ce que la déflation ?',
+    answer: 'Baisse générale et durable du niveau des prix. Contrairement à l\'inflation, la déflation est dangereuse car elle incite les agents à reporter leurs achats (anticipation de baisse future), ce qui réduit la demande, la production et l\'emploi, créant une spirale dépressive.',
+  },
+
+  // Commerce international (6-10)
+  {
+    id: 'fc-commerce-6',
+    topicId: 'commerce-international',
+    question: 'Qu\'est-ce que le protectionnisme éducateur ?',
+    answer: 'Théorie de Friedrich List : un pays en développement doit protéger temporairement ses industries naissantes de la concurrence internationale pour leur permettre de monter en compétence. Une fois matures, ces industries peuvent être exposées à la concurrence.',
+  },
+  {
+    id: 'fc-commerce-7',
+    topicId: 'commerce-international',
+    question: 'Qu\'est-ce que la chaîne de valeur mondiale ?',
+    answer: 'Décomposition internationale du processus productif : les différentes étapes de fabrication d\'un bien sont réparties entre plusieurs pays en fonction de leurs avantages comparatifs. Exemple : un iPhone conçu aux États-Unis, assemblé en Chine, avec des composants de divers pays.',
+  },
+  {
+    id: 'fc-commerce-8',
+    topicId: 'commerce-international',
+    question: 'Qu\'est-ce que le taux de change ?',
+    answer: 'Prix d\'une monnaie exprimé dans une autre monnaie. Il peut être fixe (fixé par l\'État) ou flottant (déterminé par l\'offre et la demande sur le marché des changes). Un taux de change élevé (appréciation) renchérit les exportations.',
+  },
+  {
+    id: 'fc-commerce-9',
+    topicId: 'commerce-international',
+    question: 'Qu\'est-ce que la parité de pouvoir d\'achat (PPA) ?',
+    answer: 'Théorie selon laquelle, à long terme, les taux de change s\'ajustent pour que les mêmes biens aient le même prix dans différents pays (loi du prix unique). Utilisée pour comparer le niveau de vie entre pays en neutralisant les différences de prix.',
+  },
+  {
+    id: 'fc-commerce-10',
+    topicId: 'commerce-international',
+    question: 'Qu\'est-ce que la spécialisation intra-branche ?',
+    answer: 'Échanges de produits similaires entre pays de même niveau de développement (ex: la France exporte des voitures Peugeot vers l\'Allemagne et importe des BMW). Elle repose sur la différenciation des produits et les économies d\'échelle.',
+  },
+
+  // Inégalités (6-10)
+  {
+    id: 'fc-inegalites-6',
+    topicId: 'inegalites',
+    question: 'Qu\'est-ce que la distribution primaire des revenus ?',
+    answer: 'Rémunération directe des facteurs de production : les salaires pour le travail, les profits et intérêts pour le capital. Elle résulte du fonctionnement du marché et des rapports de force entre employeurs et employés.',
+  },
+  {
+    id: 'fc-inegalites-7',
+    topicId: 'inegalites',
+    question: 'Qu\'est-ce que la distribution secondaire des revenus ?',
+    answer: 'Redistribution des revenus par l\'État via les impôts et les transferts sociaux. Elle vise à corriger les inégalités créées par la distribution primaire en prélevant sur les hauts revenus et en versant des prestations aux plus modestes.',
+  },
+  {
+    id: 'fc-inegalites-8',
+    topicId: 'inegalites',
+    question: 'Qu\'est-ce que la pauvreté relative et absolue ?',
+    answer: 'La pauvreté absolue est définie par un seuil fixe (ex: $2,15/jour en PPA) et mesure l\'incapacité à satisfaire les besoins vitaux. La pauvreté relative est définie par rapport au niveau de vie médian du pays (ex: 60% du revenu médian en France).',
+  },
+  {
+    id: 'fc-inegalites-9',
+    topicId: 'inegalites',
+    question: 'Qu\'est-ce que la courbe de Lorenz ?',
+    answer: 'Représentation graphique de la répartition des revenus : elle compare le pourcentage cumulé de la population (axe x) au pourcentage cumulé des revenus (axe y). Plus la courbe s\'éloigne de la diagonale d\'égalité parfaite, plus les inégalités sont fortes.',
+  },
+  {
+    id: 'fc-inegalites-10',
+    topicId: 'inegalites',
+    question: 'Qu\'est-ce que la progressivité de l\'impôt ?',
+    answer: 'Caractéristique d\'un impôt dont le taux moyen augmente avec le revenu imposable. L\'impôt sur le revenu en France est progressif : plus le revenu est élevé, plus la part prélevée est importante. C\'est un instrument puissant de redistribution.',
+  },
+
+  // ── Sociologie batch 3 ──
+
+  // Socialisation (6-10)
+  {
+    id: 'fc-socialisation-6',
+    topicId: 'socialisation',
+    question: 'Qu\'est-ce que la socialisation politique ?',
+    answer: 'Processus par lequel les individus intériorisent les valeurs, normes et comportements politiques de leur société. Elle se fait via la famille, l\'école, les médias et les pairs. Elle explique la formation des opinions et des orientations politiques.',
+  },
+  {
+    id: 'fc-socialisation-7',
+    topicId: 'socialisation',
+    question: 'Qu\'est-ce que la transmission intergénérationnelle des valeurs ?',
+    answer: 'Processus par lequel les parents transmettent à leurs enfants des valeurs, normes et croyances. Elle peut se faire de façon consciente (éducation explicite) ou inconsciente (imitation, climat familial). Elle contribue à la reproduction sociale.',
+  },
+  {
+    id: 'fc-socialisation-8',
+    topicId: 'socialisation',
+    question: 'Qu\'est-ce que la socialisation professionnelle ?',
+    answer: 'Processus d\'apprentissage des normes, valeurs et savoir-faire propres à un métier ou une profession. Elle se déroule pendant la formation initiale, l\'apprentissage sur le terrain et l\'intégration dans une culture professionnelle.',
+  },
+  {
+    id: 'fc-socialisation-9',
+    topicId: 'socialisation',
+    question: 'Qu\'est-ce que la socialisation de genre ?',
+    answer: 'Processus par lequel les individues apprennent les comportements, attitudes et rôles considérés comme appropriés à leur sexe social. Les agents de socialisation (famille, école, médias) transmettent des attentes différenciées dès la petite enfance.',
+  },
+  {
+    id: 'fc-socialisation-10',
+    topicId: 'socialisation',
+    question: 'Qu\'est-ce que la résocialisation ?',
+    answer: 'Processus par lequel un individu abandonne un ensemble de normes et valeurs pour en adopter de nouveaux, souvent dans un cadre institutionnel contraignant. Exemples : entrée en prison, conversion religieuse, intégration dans une secte.',
+  },
+
+  // Liens sociaux (6-10)
+  {
+    id: 'fc-liens-6',
+    topicId: 'liens-sociaux',
+    question: 'Qu\'est-ce que le lien de filiation ?',
+    answer: 'Lien social fondé sur la parenté et la transmission entre générations. Il repose sur des liens biologiques et/ou juridiques, et constitue le premier cadre de socialisation de l\'individu. Il a été profondément transformé par les évolutions familiales (familles recomposées, homoparentalité).',
+  },
+  {
+    id: 'fc-liens-7',
+    topicId: 'liens-sociaux',
+    question: 'Qu\'est-ce que le lien de participation élective ?',
+    answer: 'Lien social choisi, fondé sur l\'affinité et la volonté des individus (amitiés, amour, associations). Il se distingue des liens hérités (famille) et des liens organiques (travail). Il est devenu plus important dans les sociétés individualistes modernes.',
+  },
+  {
+    id: 'fc-liens-8',
+    topicId: 'liens-sociaux',
+    question: 'Qu\'est-ce que le lien de participation organique ?',
+    answer: 'Lien social fondé sur l\'interdépendance fonctionnelle entre les individus dans la division du travail. Théorisé par Durkheim comme fondement de la solidarité organique dans les sociétés modernes, il relie les individus par leur complémentarité professionnelle.',
+  },
+  {
+    id: 'fc-liens-9',
+    topicId: 'liens-sociaux',
+    question: 'Qu\'est-ce que la théorie des réseaux empathiques (Dunbar) ?',
+    answer: 'Théorie selon laquelle le nombre de relations sociales stables qu\'un individu peut entretenir est limité par la taille de son néocortex (environ 150 personnes, nombre de Dunbar). Au-delà, les relations devent plus superficielles et moins engageantes.',
+  },
+  {
+    id: 'fc-liens-10',
+    topicId: 'liens-sociaux',
+    question: 'Qu\'est-ce que l\'individualisation des liens sociaux ?',
+    answer: 'Processus par lequel les individus deviennent plus autonomes dans le choix et la gestion de leurs relations sociales, mais aussi plus vulnérables face aux ruptures. Les liens deviennent plus électifs, plus fragiles, et moins encadrés par la tradition.',
+  },
+
+  // Stratification (6-10)
+  {
+    id: 'fc-stratification-6',
+    topicId: 'stratification',
+    question: 'Qu\'est-ce que l\'approche de l\'école de Chicago ?',
+    answer: 'Courant sociologique américain qui a développé une analyse de la stratification sociale en termes de mobilité et d\'intégration des immigrants. Elle distingue les groupes ethniques et professionnels dans une perspective d\'écologie urbaine.',
+  },
+  {
+    id: 'fc-stratification-7',
+    topicId: 'stratification',
+    question: 'Qu\'est-ce que la moyennisation de la société ?',
+    answer: 'Thèse d\'Henri Mendras selon laquelle la société française du XXe siècle a vu la réduction des extrêmes et l\'expansion des classes moyennes, créant une « toupie » sociale avec un vaste milieu central et des franges réduites en haut et en bas.',
+  },
+  {
+    id: 'fc-stratification-8',
+    topicId: 'stratification',
+    question: 'Qu\'est-ce que la polarisation sociale ?',
+    answer: 'Phénomène inverse de la moyennisation : accroissement des écarts entre les catégories sociales les plus riches et les plus pauvres, avec érosion des classes moyennes. Observée dans plusieurs pays développés depuis les années 1980.',
+  },
+  {
+    id: 'fc-stratification-9',
+    topicId: 'stratification',
+    question: 'Qu\'est-ce que la nomenclature des CSP ?',
+    answer: 'Classification historique de l\'INSEE en Catégories Socio-Professionnelles, remplacée par les PCS en 1982. Elle distinguait 9 groupes (agriculteurs, patrons, cadres supérieurs, cadres moyens, employés, ouvriers, personnels de service, autres actifs, inactifs).',
+  },
+  {
+    id: 'fc-stratification-10',
+    topicId: 'stratification',
+    question: 'Qu\'est-ce que l\'échelle de prestige professionnel ?',
+    answer: 'Mesure du prestige associé à chaque profession, construite à partir d\'enquêtes d\'opinion. Les professions intellectuelles et scientifiques sont généralement les plus prestigieuses, tandis que les métiers manuels peu qualifiés sont en bas de l\'échelle.',
+  },
+
+  // Inégalités sociales (6-10)
+  {
+    id: 'fc-inegalites-sociales-6',
+    topicId: 'inegalites-sociales',
+    question: 'Qu\'est-ce que l\'exclusion sociale ?',
+    answer: 'Processus de marginalisation qui prive certains individus ou groupes de la participation à la vie sociale, économique et politique. Elle cumule souvent précarité économique, isolement relationnel et stigmatisation.',
+  },
+  {
+    id: 'fc-inegalites-sociales-7',
+    topicId: 'inegalites-sociales',
+    question: 'Qu\'est-ce que le plafond de verre ?',
+    answer: 'Métaphore désignant les barrières invisibles mais réelles qui empêchent les femmes (ou d\'autres groupes discriminés) d\'accéder aux postes de pouvoir et de direction, malgré des compétences égales. Il résulte de stéréotypes, de préjugés et de biais structurels.',
+  },
+  {
+    id: 'fc-inegalites-sociales-8',
+    topicId: 'inegalites-sociales',
+    question: 'Qu\'est-ce que la ségrégation spatiale ?',
+    answer: 'Séparation physique de groupes sociaux ou ethniques dans l\'espace urbain. Elle se traduit par une concentration de certaines populations dans des quartiers spécifiques, souvent liée aux inégalités économiques et aux choix résidentiels contraints.',
+  },
+  {
+    id: 'fc-inegalites-sociales-9',
+    topicId: 'inegalites-sociales',
+    question: 'Qu\'est-ce que la discrimination systémique ?',
+    answer: 'Forme de discrimination ancrée dans les structures et le fonctionnement normal des institutions (marché du travail, système scolaire, logement). Elle n\'a pas besoin d\'acteurs intentionnellement discriminants pour se reproduire.',
+  },
+  {
+    id: 'fc-inegalites-sociales-10',
+    topicId: 'inegalites-sociales',
+    question: 'Qu\'est-ce que l\'empowerment (capacitation) ?',
+    answer: 'Processus par lequel des individus ou groupes dominés acquièrent le pouvoir d\'agir sur leur propre vie. Il combine prise de conscience, acquisition de compétences et participation collective. Concept clé des politiques sociales et du développement.',
+  },
+
+  // Mobilité (6-10)
+  {
+    id: 'fc-mobilite-6',
+    topicId: 'mobilite',
+    question: 'Qu\'est-ce que la mobilité sociale absolue et relative ?',
+    answer: 'La mobilité absolue mesure les changements de position entre générations sans tenir compte de la structure des emplois. La mobilité relative (ou fluidité sociale) mesure les chances de mobilité à origine sociale donnée, tous les effets structurels neutralisés.',
+  },
+  {
+    id: 'fc-mobilite-7',
+    topicId: 'mobilite',
+    question: 'Qu\'est-ce que l\'origine sociale ?',
+    answer: 'Position sociale des parents d\'un individu, généralement mesurée par la profession du père, de la mère ou la PCS du ménage. Elle est la variable explicative la plus utilisée dans l\'étude de la mobilité sociale et des inégalités de destins.',
+  },
+  {
+    id: 'fc-mobilite-8',
+    topicId: 'mobilite',
+    question: 'Qu\'est-ce que le capital culturel institutionnalisé ?',
+    answer: 'Forme de capital culturel (Bourdieu) constituée par les titres scolaires et diplômes. Il transforme le capital culturel hérité en reconnaissance institutionnelle légitime, et joue un rôle clé dans la reproduction sociale.',
+  },
+  {
+    id: 'fc-mobilite-9',
+    topicId: 'mobilite',
+    question: 'Qu\'est-ce que l\'inflation des diplômes ?',
+    answer: 'Phénomène de hausse générale du niveau d\'éducation de la population, qui entraîne une dévalorisation relative des diplômes : un baccalauréat donne accès à des emplois moins qualifiés qu\'auparavant car il est devenu plus courant.',
+  },
+  {
+    id: 'fc-mobilite-10',
+    topicId: 'mobilite',
+    question: 'Qu\'est-ce que la mobilité sociale paradoxale ?',
+    answer: 'Situation où un individu connaît une mobilité sociale ascendante en termes de position professionnelle mais vit cette ascension comme un déclassement subjectif, par exemple quand le statut attendu (compte tenu du diplôme) n\'est pas atteint.',
+  },
+
+  // Travail (6-10)
+  {
+    id: 'fc-travail-6',
+    topicId: 'travail',
+    question: 'Qu\'est-ce que le fordisme ?',
+    answer: 'Modèle de production de masse combinant les principes du taylorisme (parcellisation des tâches) et le travail à la chaîne, associé à des hausses de salaires (les « five dollars a day » de Ford). Il a dominé les Trente Glorieuses.',
+  },
+  {
+    id: 'fc-travail-7',
+    topicId: 'travail',
+    question: 'Qu\'est-ce que le toyotisme ?',
+    answer: 'Modèle d\'organisation productive développé par Toyota : production au plus juste (juste-à-temps, lean management), polyvalence des ouvriers, cercles de qualité, amélioration continue (kaizen). Il a diffusé à partir des années 1970-80.',
+  },
+  {
+    id: 'fc-travail-8',
+    topicId: 'travail',
+    question: 'Qu\'est-ce que la segmentation du marché du travail ?',
+    answer: 'Théorie (Doeringer et Piore) qui distingue un marché primaire (emplois stables, bien rémunérés, avec perspectives de carrière) et un marché secondaire (emplois précaires, faiblement rémunérés, sans perspective). La mobilité entre les deux est limitée.',
+  },
+  {
+    id: 'fc-travail-9',
+    topicId: 'travail',
+    question: 'Qu\'est-ce que la qualité de l\'emploi ?',
+    answer: 'Notion multidimensionnelle qui ne se limite pas au salaire : elle inclut la sécurité de l\'emploi, les conditions de travail, l\'autonomie, le sens du travail, les perspectives de carrière, l\'équilibre vie professionnelle/vie personnelle.',
+  },
+  {
+    id: 'fc-travail-10',
+    topicId: 'travail',
+    question: 'Qu\'est-ce que le télétravail ?',
+    answer: 'Forme d\'organisation du travail où le salarié exerce son activité professionnelle en dehors des locaux de l\'employeur, généralement depuis son domicile, en utilisant les technologies de l\'information et de la communication.',
+  },
+
+  // Déviance (6-10)
+  {
+    id: 'fc-deviance-6',
+    topicId: 'deviance',
+    question: 'Qu\'est-ce que la théorie de la tension (Merton) ?',
+    answer: 'Robert Merton explique la déviance par le décalage entre les buts culturels (réussite matérielle) et les moyens institutionnalisés pour les atteindre. Face à cette tension, l\'individu peut innover (chercher des moyens illégitimes), se rebeller, ou se retirer.',
+  },
+  {
+    id: 'fc-deviance-7',
+    topicId: 'deviance',
+    question: 'Qu\'est-ce que la fenêtre de Wilson (broken windows theory) ?',
+    answer: 'Théorie de Wilson et Kelling : les signes visibles de désordre (vitres cassées, graffitis, incivilités) encouragent des comportements déviants plus graves en envoyant un signal d\'absence de contrôle social. Elle a inspiré des politiques de tolérance zéro.',
+  },
+  {
+    id: 'fc-deviance-8',
+    topicId: 'deviance',
+    question: 'Qu\'est-ce que le contrôle social formel et informel ?',
+    answer: 'Le contrôle social formel est exercé par les institutions spécialisées (police, justice, prison). Le contrôle social informel est diffus et exercé par le groupe social (famille, pairs, voisinage) via la réprobation, la moquerie ou l\'exclusion.',
+  },
+  {
+    id: 'fc-deviance-9',
+    topicId: 'deviance',
+    question: 'Qu\'est-ce que la déviance positive (Merton) ?',
+    answer: 'Concept de Merton : comportement qui s\'écarte des normes sociales mais qui est valorisé car il contribue au progrès social. Exemples : les innovateurs, les artistes d\'avant-garde, les lanceurs d\'alerte. La déviance n\'est donc pas nécessairement négative.',
+  },
+  {
+    id: 'fc-deviance-10',
+    topicId: 'deviance',
+    question: 'Qu\'est-ce que la panique morale ?',
+    answer: 'Concept de Stanley Cohen : réaction sociale excessive et disproportionnée face à un phénomène perçu comme une menace pour l\'ordre social, souvent amplifiée par les médias et les acteurs politiques. Exemple : la « délinquance des mineurs » dans les années 2000.',
+  },
+
+  // ── Regards Croisés batch 3 ──
+
+  // Développement (6-10)
+  {
+    id: 'fc-developpement-6',
+    topicId: 'developpement',
+    question: 'Qu\'est-ce que la transition démographique ?',
+    answer: 'Théorie démographique qui décrit le passage d\'un régime de forte natalité et forte mortalité à un régime de faible natalité et faible mortalité. Elle passe par une phase de forte croissance démographique quand la mortalité baisse avant la natalité.',
+  },
+  {
+    id: 'fc-developpement-7',
+    topicId: 'developpement',
+    question: 'Qu\'est-ce que l\'indice de pauvreté multidimensionnelle (IPM) ?',
+    answer: 'Indicateur développé par l\'ONU et Oxford Poverty & Human Development Initiative, qui mesure la pauvreté selon 3 dimensions (santé, éducation, niveau de vie) avec 10 indicateurs. Il complète les mesures monétaires de la pauvreté.',
+  },
+  {
+    id: 'fc-developpement-8',
+    topicId: 'developpement',
+    question: 'Qu\'est-ce que la malédiction des ressources naturelles ?',
+    answer: 'Paradoxe selon lequel les pays riches en ressources naturelles (pétrole, diamants) ont souvent une croissance plus faible et des institutions plus faibles que les pays pauvres en ressources. Causes : corruption, instabilité politique, maladie hollandaise.',
+  },
+  {
+    id: 'fc-developpement-9',
+    topicId: 'developpement',
+    question: 'Qu\'est-ce que la substitution d\'importations ?',
+    answer: 'Stratégie de développement économique visant à remplacer les importations par une production locale, en protégeant les industries naissantes par des barrières douanières. Adoptée par de nombreux pays d\'Amérique latine et d\'Asie dans les années 1950-70.',
+  },
+  {
+    id: 'fc-developpement-10',
+    topicId: 'developpement',
+    question: 'Qu\'est-ce que la Conditionnalité des aides internationales ?',
+    answer: 'Pratique des institutions financières internationales (FMI, Banque mondiale) qui conditionnent leurs prêts à la mise en œuvre de réformes économiques et politiques par les pays bénéficiaires (plans d\'ajustement structurel, bonne gouvernance).',
+  },
+
+  // Emploi (6-10)
+  {
+    id: 'fc-emploi-6',
+    topicId: 'emploi',
+    question: 'Qu\'est-ce que le service public de l\'emploi ?',
+    answer: 'Ensemble des organismes publics chargés de l\'accompagnement des chômeurs et de la mise en relation avec les employeurs. En France : France Travail (ex-Pôle emploi) pour l\'indemnisation et le placement, et les missions locales pour les jeunes.',
+  },
+  {
+    id: 'fc-emploi-7',
+    topicId: 'emploi',
+    question: 'Qu\'est-ce que la formation professionnelle continue ?',
+    answer: 'Système permettant aux actifs de se former tout au long de leur vie professionnelle pour maintenir ou développer leurs compétences. En France, elle est financée par les entreprises (via les OPCO) et gérée par le Compte Personnel de Formation (CPF).',
+  },
+  {
+    id: 'fc-emploi-8',
+    topicId: 'emploi',
+    question: 'Qu\'est-ce que le Revenu de Solidarité Active (RSA) ?',
+    answer: 'Prestation sociale française qui garantit un revenu minimum aux personnes sans ressources. Elle est conditionnée à l\'âge (25 ans ou plus, sauf exceptions) et à la résidence en France. Depuis 2023, elle est accompagnée d\'obligations d\'activité renforcées.',
+  },
+  {
+    id: 'fc-emploi-9',
+    topicId: 'emploi',
+    question: 'Qu\'est-ce que l\'insertion professionnelle ?',
+    answer: 'Processus par lequel un individu accède à un emploi stable et s\'intègre durablement sur le marché du travail. Elle est particulièrement difficile pour les jeunes, les personnes peu qualifiées et les habitants des quartiers prioritaires.',
+  },
+  {
+    id: 'fc-emploi-10',
+    topicId: 'emploi',
+    question: 'Qu\'est-ce que la GPEC (Gestion Prévisionnelle des Emplois et des Compétences) ?',
+    answer: 'Démarche de gestion des ressources humaines visant à anticiper les besoins en emplois et compétences pour adapter les effectifs aux évolutions de l\'entreprise. Elle permet de prévoir les recrutements, formations et mobilités nécessaires.',
+  },
+
+  // Protection sociale (6-10)
+  {
+    id: 'fc-protection-6',
+    topicId: 'protection-sociale',
+    question: 'Qu\'est-ce que la Sécurité Sociale ?',
+    answer: 'Système français de protection sociale créé en 1945, qui couvre les risques maladie, maternité, invalidité, vieillesse, accident du travail et charges de famille. Il est financé par les cotisations sociales et géré par les partenaires sociaux.',
+  },
+  {
+    id: 'fc-protection-7',
+    topicId: 'protection-sociale',
+    question: 'Qu\'est-ce que le trou de la Sécu ?',
+    answer: 'Expression désignant le déficit du régime général de la Sécurité Sociale, quand les dépenses (prestations) dépassent les recettes (cotisations). Ce déficit est financé par l\'emprunt et fait l\'objet de plans de redressement réguliers.',
+  },
+  {
+    id: 'fc-protection-8',
+    topicId: 'protection-sociale',
+    question: 'Qu\'est-ce que la retraite par répartition ?',
+    answer: 'Système de retraite où les cotisations des actifs financent les pensions des retraités (solidarité entre générations). Il s\'oppose à la retraite par capitalisation où chaque individu épargne pour sa propre retraite. La France fonctionne principalement par répartition.',
+  },
+  {
+    id: 'fc-protection-9',
+    topicId: 'protection-sociale',
+    question: 'Qu\'est-ce que le minimum vieillesse (ASPA) ?',
+    answer: 'Allocation de Solidarité aux Personnes Âgées (ASPA), anciennement « minimum vieillesse » : prestation française destinée aux personnes âgées disposant de faibles revenus. Elle garantit un niveau de vie minimum aux retraités modestes.',
+  },
+  {
+    id: 'fc-protection-10',
+    topicId: 'protection-sociale',
+    question: 'Qu\'est-ce que la cinquième branche de la Sécurité Sociale ?',
+    answer: 'Branche « autonomie » créée en 2020 pour financer la dépendance des personnes âgées et handicapées. Elle complète les quatre branches historiques (maladie, vieillesse, famille, accidents du travail) et est financée par la CSG et la solidarité nationale.',
+  },
+
+  // Action publique (6-10)
+  {
+    id: 'fc-action-6',
+    topicId: 'action-publique',
+    question: 'Qu\'est-ce que le lobbying ?',
+    answer: 'Activité d\'influence exercée par des groupes d\'intérêt (entreprises, syndicats, associations) sur les pouvoirs publics pour orienter les décisions politiques et réglementaires dans leur sens. Il est encadré par des règles de transparence.',
+  },
+  {
+    id: 'fc-action-7',
+    topicId: 'action-publique',
+    question: 'Qu\'est-ce que l\'européanisation des politiques publiques ?',
+    answer: 'Processus par lequel les politiques publiques nationales sont influencées, contraintes ou alignées sur les normes et directives de l\'Union Européenne. Elle concerne des domaines variés : concurrence, environnement, agriculture, monnaie.',
+  },
+  {
+    id: 'fc-action-8',
+    topicId: 'action-publique',
+    question: 'Qu\'est-ce que l\'évaluation participative ?',
+    answer: 'Démarche d\'évaluation des politiques publiques qui associe les citoyens, usagers et parties prenantes à toutes les étapes (diagnostic, analyse, recommandations). Elle vise à renforcer la démocratie participative et l\'efficacité des politiques.',
+  },
+  {
+    id: 'fc-action-9',
+    topicId: 'action-publique',
+    question: 'Qu\'est-ce que le référendum d\'initiative partagée (RIP) ?',
+    answer: 'Procédure française de démocratie semi-directe introduite en 2008 : un référendum peut être organisé sur proposition d\'un cinquième des parlementaires soutenue par un dixième des électeurs inscrits. Il permet aux citoyens de provoquer une consultation sur une loi.',
+  },
+  {
+    id: 'fc-action-10',
+    topicId: 'action-publique',
+    question: 'Qu\'est-ce que la bureaucratie selon Max Weber ?',
+    answer: 'Forme d\'organisation administrative caractérisée par : division du travail, hiérarchie, règles écrites, impersonnalité, recrutement par concours. Pour Weber, elle est la forme la plus rationnelle et efficace d\'organisation, mais peut dégénérer en « cage de fer ».',
+  },
+
+  // Organisations (6-10)
+  {
+    id: 'fc-organisations-6',
+    topicId: 'organisations',
+    question: 'Qu\'est-ce que la théorie de l\'agence ?',
+    answer: 'Théorie économique qui analyse les relations entre un mandant (principal, ex: actionnaires) et un mandataire (agent, ex: dirigeants) aux intérêts divergents. Elle étudie les mécanismes d\'incitation et de contrôle pour réduire les coûts d\'agence.',
+  },
+  {
+    id: 'fc-organisations-7',
+    topicId: 'organisations',
+    question: 'Qu\'est-ce que l\'économie des conventions ?',
+    answer: 'Courant économique qui étudie comment les acteurs coordonnent leurs actions via des conventions (règles partagées, normes implicites). Les conventions permettent de résoudre des problèmes de coordination dans des situations d\'incertitude.',
+  },
+  {
+    id: 'fc-organisations-8',
+    topicId: 'organisations',
+    question: 'Qu\'est-ce que la RSE (Responsabilité Sociale des Entreprises) ?',
+    answer: 'Démarche volontaire des entreprises qui intègrent des préoccupations sociales, environnementales et éthiques dans leurs activités. Elle dépasse les obligations légales et vise à concilier performance économique et responsabilité sociétale.',
+  },
+  {
+    id: 'fc-organisations-9',
+    topicId: 'organisations',
+    question: 'Qu\'est-ce que l\'entreprise libérée ?',
+    answer: 'Concept de management (Isaac Getz) où les salariés disposent d\'une grande autonomie et sont responsabilisés, sans hiérarchie lourde ni contrôles excessifs. L\'objectif est de libérer l\'initiative et l\'intelligence collective.',
+  },
+  {
+    id: 'fc-organisations-10',
+    topicId: 'organisations',
+    question: 'Qu\'est-ce que la théorie des parties prenantes (stakeholders) ?',
+    answer: 'Théorie de Freeman : une entreprise ne doit pas seulement satisfaire ses actionnaires (shareholders) mais aussi l\'ensemble des parties prenantes : salariés, clients, fournisseurs, collectivités, ONG. Elle fonde la RSE et la gouvernance élargie.',
+  },
+
+  // Comportementale (6-10)
+  {
+    id: 'fc-comportementale-6',
+    topicId: 'comportementale',
+    question: 'Qu\'est-ce que l\'heuristique de disponibilité ?',
+    answer: 'Biais cognitif (Kahneman & Tversky) : les individus jugent la fréquence ou la probabilité d\'un événement en fonction de la facilité avec laquelle des exemples leur viennent à l\'esprit. Un événement spectaculaire récent sera surestimé.',
+  },
+  {
+    id: 'fc-comportementale-7',
+    topicId: 'comportementale',
+    question: 'Qu\'est-ce que l\'effet d\'ancrage ?',
+    answer: 'Biais cognitif où une information initiale (l\'ancre) influence fortement les jugements ultérieurs, même si elle est arbitraire. Exemple : le prix affiché initialement dans une négociation influence l\'évaluation de l\'offre finale.',
+  },
+  {
+    id: 'fc-comportementale-8',
+    topicId: 'comportementale',
+    question: 'Qu\'est-ce que le paradoxe de l\'épargne (Keynes) ?',
+    answer: 'Aussi appelé « paradoxe de la thrift » : si tous les individus épargnent davantage en période de récession, la demande globale baisse, ce qui réduit la production et l\'emploi, et donc l\'épargne totale peut baisser au lieu d\'augmenter.',
+  },
+  {
+    id: 'fc-comportementale-9',
+    topicId: 'comportementale',
+    question: 'Qu\'est-ce que le biais d\'optimisme ?',
+    answer: 'Tendance des individus à surestimer la probabilité d\'événements positifs et à sous-estimer la probabilité d\'événements négatifs les concernant. Ce biais affecte les décisions financières, l\'entrepreneuriat et les comportements de santé.',
+  },
+  {
+    id: 'fc-comportementale-10',
+    topicId: 'comportementale',
+    question: 'Qu\'est-ce que la théorie du coup de pouce (nudge) ?',
+    answer: 'Concept de Thaler et Sunstein : des modifications mineures de l\'environnement de choix peuvent influencer les comportements sans restreindre les libertés. Exemples : défaut d\'inscription à l\'épargne retraite, assiettes plus petites pour réduire les portions.',
+  },
+
+  // Environnement (6-10)
+  {
+    id: 'fc-environnement-6',
+    topicId: 'environnement',
+    question: 'Qu\'est-ce que l\'accord de Paris sur le climat ?',
+    answer: 'Traité international signé en 2015 lors de la COP21, engageant 196 pays à limiter le réchauffement climatique bien en dessous de 2°C (et si possible 1,5°C) par rapport aux niveaux préindustriels, via des Contributions Déterminées au niveau National (CDN).',
+  },
+  {
+    id: 'fc-environnement-7',
+    topicId: 'environnement',
+    question: 'Qu\'est-ce que le principe pollueur-payeur ?',
+    answer: 'Principe environnemental selon lequel le coût des mesures de prévention et de lutte contre la pollution doit être supporté par celui qui en est responsable. Il est inscrit dans le droit de l\'environnement européen et français.',
+  },
+  {
+    id: 'fc-environnement-8',
+    topicId: 'environnement',
+    question: 'Qu\'est-ce que l\'empreinte écologique ?',
+    answer: 'Indicateur qui mesure la pression humaine sur les ressources naturelles en hectares globaux (surface terrestre et marine nécessaire pour produire les ressources consommées et absorber les déchets). Elle compare la demande humaine à la biocapacité de la Terre.',
+  },
+  {
+    id: 'fc-environnement-9',
+    topicId: 'environnement',
+    question: 'Qu\'est-ce que la taxe carbone aux frontières ?',
+    answer: 'Mécanisme d\'ajustement carbone aux frontières (MACF) de l\'UE : les importateurs de produits à forte intensité carbone (acier, ciment, aluminium) doivent acheter des certificats correspondant au prix du carbone européen. Évite les fuites de carbone.',
+  },
+  {
+    id: 'fc-environnement-10',
+    topicId: 'environnement',
+    question: 'Qu\'est-ce que les Objectifs de Développement Durable (ODD) ?',
+    answer: '17 objectifs adoptés par l\'ONU en 2015 pour l\'agenda 2030 : éliminer la pauvreté, la faim, assurer l\'éducation, l\'égalité des genres, l\'accès à l\'eau, promouvoir la croissance durable, lutter contre le changement climatique, etc. Ils lient développement et environnement.',
+  },
 ]

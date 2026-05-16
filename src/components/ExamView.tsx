@@ -2,7 +2,8 @@ import { useState, useMemo, useCallback, useEffect, useRef } from 'react'
 import { generateQuiz } from '../data/quiz'
 import { flashcards } from '../data/flashcards'
 import { syllabus } from '../data/syllabus'
-import type { QuizQuestion } from '../types'
+import type { QuizQuestion, ExamPreset } from '../types'
+import { examPresets } from '../data/examPresets'
 import './ExamView.css'
 
 interface AnswerRecord {
@@ -10,14 +11,7 @@ interface AnswerRecord {
   selectedIndex: number | null  // null = unanswered / timed out
 }
 
-const DURATIONS = [
-  { label: '15 min', value: 15 },
-  { label: '30 min', value: 30 },
-  { label: '45 min', value: 45 },
-  { label: '60 min', value: 60 },
-]
-
-const QUESTIONS_PER_EXAM = 15
+// Empty — replaced by presets
 
 function themeForQuestion(q: QuizQuestion): { name: string; color: string; icon: string } {
   const card = flashcards.find(f => f.id === q.flashcardId)
@@ -37,8 +31,8 @@ interface Props {
 
 export function ExamView({ onBack, onComplete }: Props) {
   const [phase, setPhase] = useState<'setup' | 'exam' | 'results'>('setup')
-  const [duration, setDuration] = useState(30)
-  const [timeRemaining, setTimeRemaining] = useState(duration * 60)
+  const [selectedPreset, setSelectedPreset] = useState<ExamPreset>(examPresets[0])
+  const [timeRemaining, setTimeRemaining] = useState(selectedPreset.duration * 60)
   const [currentIndex, setCurrentIndex] = useState(0)
   const [answers, setAnswers] = useState<AnswerRecord[]>([])
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
@@ -47,11 +41,23 @@ export function ExamView({ onBack, onComplete }: Props) {
 
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
-  // Generate exam questions once: mix flashcards from all themes
+  // Generate exam questions based on preset
   const examQuestions = useMemo(() => {
-    const all = generateQuiz(flashcards)
-    return all.slice(0, QUESTIONS_PER_EXAM)
-  }, [])
+    // Filter flashcards by theme if preset specifies themeIds
+    let pool = flashcards
+    if (selectedPreset.themeIds.length > 0) {
+      const topicIds = new Set(
+        syllabus
+          .filter(t => selectedPreset.themeIds.includes(t.id))
+          .flatMap(t => t.topics.map(tp => tp.id))
+      )
+      pool = flashcards.filter(f => topicIds.has(f.topicId))
+    }
+    // If not enough cards in theme filter, fall back to all
+    if (pool.length < 2) pool = flashcards
+    const all = generateQuiz(pool)
+    return all.slice(0, selectedPreset.questionCount)
+  }, [selectedPreset])
 
   const currentQ = examQuestions[currentIndex]
 
@@ -83,20 +89,20 @@ export function ExamView({ onBack, onComplete }: Props) {
     return `${m}:${s.toString().padStart(2, '0')}`
   }
 
-  const pct = duration > 0 ? Math.round(((duration * 60 - timeRemaining) / (duration * 60)) * 100) : 0
+  const pct = selectedPreset.duration > 0 ? Math.round(((selectedPreset.duration * 60 - timeRemaining) / (selectedPreset.duration * 60)) * 100) : 0
   const isLowTime = timeRemaining > 0 && timeRemaining <= 60
   const isCritical = timeRemaining > 0 && timeRemaining <= 30
 
   // ── Start exam ──
   const handleStart = useCallback(() => {
-    setTimeRemaining(duration * 60)
+    setTimeRemaining(selectedPreset.duration * 60)
     setCurrentIndex(0)
     setAnswers([])
     setSelectedIndex(null)
     setSubmitted(false)
     setReviewIndex(-1)
     setPhase('exam')
-  }, [duration])
+  }, [selectedPreset])
 
   // ── Select answer ──
   const handleSelect = useCallback((idx: number) => {
@@ -166,7 +172,6 @@ export function ExamView({ onBack, onComplete }: Props) {
 
   const total = examQuestions.length
   const scorePct = total > 0 ? Math.round((score / total) * 100) : 0
-
   // ── Theme breakdown ──
   const themeBreakdown = useMemo(() => {
     if (!submitted) return []
@@ -198,33 +203,30 @@ export function ExamView({ onBack, onComplete }: Props) {
           <div />
         </header>
 
-        <div className="exam-setup-card">
-          <div className="exam-setup-icon">🎯</div>
-          <h2>Simulation BAC</h2>
-          <p className="exam-setup-desc">
-            {QUESTIONS_PER_EXAM} questions à choix multiples — thèmes mélangés comme le jour J.
-            Choisis la durée et lance l'épreuve.
-          </p>
-
-          <div className="exam-duration-picker">
-            <span className="exam-duration-label">Durée</span>
-            <div className="exam-duration-options">
-              {DURATIONS.map(d => (
-                <button
-                  key={d.value}
-                  className={`exam-duration-btn ${duration === d.value ? 'exam-selected' : ''}`}
-                  onClick={() => setDuration(d.value)}
-                >
-                  {d.label}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <button className="exam-start-btn" onClick={handleStart}>
-            ▶️ Commencer l'examen
-          </button>
+        <div className="exam-preset-grid">
+          {examPresets.map(preset => (
+            <button
+              key={preset.id}
+              className={`exam-preset-card ${selectedPreset.id === preset.id ? 'exam-preset-selected' : ''}`}
+              onClick={() => setSelectedPreset(preset)}
+            >
+              <span className="exam-preset-icon">{preset.icon}</span>
+              <div className="exam-preset-info">
+                <div className="exam-preset-name">{preset.name}</div>
+                <div className="exam-preset-desc">{preset.description}</div>
+                <div className="exam-preset-meta">
+                  <span>{preset.questionCount} questions</span>
+                  <span>•</span>
+                  <span>{preset.duration} min</span>
+                </div>
+              </div>
+            </button>
+          ))}
         </div>
+
+        <button className="exam-start-btn" onClick={handleStart}>
+          ▶️ Commencer l'examen
+        </button>
       </div>
     )
   }
@@ -302,7 +304,7 @@ export function ExamView({ onBack, onComplete }: Props) {
           </div>
           <div className="exam-result-pct">{scorePct}%</div>
           <div className="exam-result-time">
-            ⏱️ {formatTime(duration * 60 - timeRemaining)} / {formatTime(duration * 60)}
+            ⏱️ {formatTime(selectedPreset.duration * 60 - timeRemaining)} / {formatTime(selectedPreset.duration * 60)}
           </div>
 
           <div className="exam-theme-breakdown">

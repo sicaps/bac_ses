@@ -43,6 +43,16 @@ export interface QuizRecord {
   total: number
 }
 
+export interface ExamPreset {
+  id: string
+  name: string
+  description: string
+  themeIds: string[]      // empty = all themes
+  questionCount: number
+  duration: number        // minutes
+  icon: string
+}
+
 export interface QuizQuestion {
   flashcardId: string
   question: string
