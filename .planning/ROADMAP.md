@@ -11,7 +11,7 @@
 **Requirements:** REQ-002  
 
 ## Phase 3 — Quiz Mode
-**Status:** pending  
+**Status:** done ✅  
 **Goal:** Multiple-choice and short-answer quiz mode generated from the flashcard pool. Score tracking and wrong-answer review.  
 **Requirements:** REQ-003  
 
