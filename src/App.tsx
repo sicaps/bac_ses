@@ -1,5 +1,8 @@
 import { useState, useCallback } from 'react'
 import { syllabus } from './data/syllabus'
+import { flashcards } from './data/flashcards'
+import { FlashcardView } from './components/FlashcardView'
+import { useReviewSystem } from './hooks/useReviewSystem'
 import type { TopicStatus } from './types'
 import './App.css'
 
@@ -11,8 +14,19 @@ const statusLabels: Record<TopicStatus, string> = {
   'mastered': 'Maîtrisé',
 }
 
+function getTopicName(topicId: string): { titleFr: string; icon: string; color: string } {
+  for (const theme of syllabus) {
+    const topic = theme.topics.find(t => t.id === topicId)
+    if (topic) return { titleFr: topic.titleFr, icon: theme.icon, color: theme.color }
+  }
+  return { titleFr: topicId, icon: '📝', color: 'var(--accent-econ)' }
+}
+
 function App() {
   const [topicStatus, setTopicStatus] = useState<Map<string, TopicStatus>>(new Map())
+  const [view, setView] = useState<'browse' | 'study'>('browse')
+  const [activeTopicId, setActiveTopicId] = useState<string | null>(null)
+  const { isDue, rateCard } = useReviewSystem()
 
   const cycleStatus = useCallback((topicId: string) => {
     setTopicStatus(prev => {
@@ -23,6 +37,34 @@ function App() {
       return next
     })
   }, [])
+
+  const openStudy = useCallback((topicId: string) => {
+    setActiveTopicId(topicId)
+    setView('study')
+  }, [])
+
+  const closeStudy = useCallback(() => {
+    setActiveTopicId(null)
+    setView('browse')
+  }, [])
+
+  if (view === 'study' && activeTopicId) {
+    const topicInfo = getTopicName(activeTopicId)
+    const topicFlashcards = flashcards.filter(f => f.topicId === activeTopicId)
+    return (
+      <div className="app">
+        <FlashcardView
+          flashcards={topicFlashcards}
+          topicTitle={topicInfo.titleFr}
+          topicIcon={topicInfo.icon}
+          topicColor={topicInfo.color}
+          onRate={rateCard}
+          isCardDue={isDue}
+          onBack={closeStudy}
+        />
+      </div>
+    )
+  }
 
   const allTopics = syllabus.flatMap(t => t.topics)
   const total = allTopics.length
@@ -74,21 +116,35 @@ function App() {
               <div className="topic-list">
                 {theme.topics.map(topic => {
                   const status = topicStatus.get(topic.id) ?? 'not-started'
+                  const topicFlashcards = flashcards.filter(f => f.topicId === topic.id)
                   return (
-                    <button
+                    <div
                       key={topic.id}
-                      className={`topic-card status-${status}`}
-                      onClick={() => cycleStatus(topic.id)}
-                      title="Click to cycle status: À voir → En cours → Maîtrisé"
+                      className={`topic-card-wrapper status-${status}`}
                     >
-                      <div className="topic-body">
-                        <h3>{topic.titleFr}</h3>
-                        <p className="topic-desc">{topic.description}</p>
-                      </div>
-                      <span className={`status-badge ${status}`}>
-                        {statusLabels[status]}
-                      </span>
-                    </button>
+                      <button
+                        className="topic-card"
+                        onClick={() => cycleStatus(topic.id)}
+                        title="Click to cycle status: À voir → En cours → Maîtrisé"
+                      >
+                        <div className="topic-body">
+                          <h3>{topic.titleFr}</h3>
+                          <p className="topic-desc">{topic.description}</p>
+                        </div>
+                        <span className={`status-badge ${status}`}>
+                          {statusLabels[status]}
+                        </span>
+                      </button>
+                      {topicFlashcards.length > 0 && (
+                        <button
+                          className="study-btn"
+                          onClick={() => openStudy(topic.id)}
+                          title={`Étudier ${topic.titleFr}`}
+                        >
+                          📖 Étudier
+                        </button>
+                      )}
+                    </div>
                   )
                 })}
               </div>
@@ -98,7 +154,7 @@ function App() {
       </main>
 
       <footer className="footer">
-        <p>bac_ses — click a topic to cycle its status</p>
+        <p>bac_ses — cliquez sur un thème pour étudier les flashcards</p>
       </footer>
     </div>
   )

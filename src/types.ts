@@ -16,3 +16,21 @@ export interface Theme {
   color: string
   topics: Topic[]
 }
+
+export interface Flashcard {
+  id: string
+  topicId: string
+  question: string
+  answer: string
+}
+
+export type ReviewRating = 'again' | 'good' | 'easy'
+
+export interface ReviewEntry {
+  cardId: string
+  level: number        // 0=new, 1=again, 2=good, 3=easy
+  nextReview: number   // epoch ms
+  lastReviewed: number | null
+}
+
+export type AppView = 'browse' | 'study'
