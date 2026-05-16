@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react'
 import { syllabus } from './data/syllabus'
 import { flashcards } from './data/flashcards'
 import { FlashcardView } from './components/FlashcardView'
+import { QuizView } from './components/QuizView'
 import { useReviewSystem } from './hooks/useReviewSystem'
 import type { TopicStatus } from './types'
 import './App.css'
@@ -24,7 +25,7 @@ function getTopicName(topicId: string): { titleFr: string; icon: string; color: 
 
 function App() {
   const [topicStatus, setTopicStatus] = useState<Map<string, TopicStatus>>(new Map())
-  const [view, setView] = useState<'browse' | 'study'>('browse')
+  const [view, setView] = useState<'browse' | 'study' | 'quiz'>('browse')
   const [activeTopicId, setActiveTopicId] = useState<string | null>(null)
   const { isDue, rateCard } = useReviewSystem()
 
@@ -41,6 +42,16 @@ function App() {
   const openStudy = useCallback((topicId: string) => {
     setActiveTopicId(topicId)
     setView('study')
+  }, [])
+
+  const openQuiz = useCallback((topicId: string) => {
+    setActiveTopicId(topicId)
+    setView('quiz')
+  }, [])
+
+  const closeQuiz = useCallback(() => {
+    setActiveTopicId(null)
+    setView('browse')
   }, [])
 
   const closeStudy = useCallback(() => {
@@ -61,6 +72,22 @@ function App() {
           onRate={rateCard}
           isCardDue={isDue}
           onBack={closeStudy}
+        />
+      </div>
+    )
+  }
+
+  if (view === 'quiz' && activeTopicId) {
+    const topicInfo = getTopicName(activeTopicId)
+    const topicFlashcards = flashcards.filter(f => f.topicId === activeTopicId)
+    return (
+      <div className="app">
+        <QuizView
+          flashcards={topicFlashcards}
+          topicTitle={topicInfo.titleFr}
+          topicIcon={topicInfo.icon}
+          topicColor={topicInfo.color}
+          onBack={closeQuiz}
         />
       </div>
     )
@@ -136,13 +163,24 @@ function App() {
                         </span>
                       </button>
                       {topicFlashcards.length > 0 && (
-                        <button
-                          className="study-btn"
-                          onClick={() => openStudy(topic.id)}
-                          title={`Étudier ${topic.titleFr}`}
-                        >
-                          📖 Étudier
-                        </button>
+                        <>
+                          <button
+                            className="study-btn"
+                            onClick={() => openStudy(topic.id)}
+                            title={`Étudier ${topic.titleFr}`}
+                          >
+                            📖 Étudier
+                          </button>
+                          {topicFlashcards.length >= 2 && (
+                            <button
+                              className="quiz-btn"
+                              onClick={() => openQuiz(topic.id)}
+                              title={`Quiz ${topic.titleFr}`}
+                            >
+                              📝 Quiz
+                            </button>
+                          )}
+                        </>
                       )}
                     </div>
                   )

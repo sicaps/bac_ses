@@ -1,0 +1,416 @@
+/* ───── Quiz View Layout ───── */
+
+.qz-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  animation: qzFadeIn 0.35s ease both;
+}
+
+/* ───── Header ───── */
+
+.qz-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
+}
+
+.qz-header-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+.qz-progress {
+  font-size: 1rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.qz-back-btn {
+  all: unset;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--text);
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  transition: background 0.2s;
+}
+
+.qz-back-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ───── Question Card ───── */
+
+.qz-card {
+  width: 100%;
+  max-width: 600px;
+  padding: 32px 28px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  box-shadow: var(--glass-shadow);
+  text-align: center;
+}
+
+.qz-question-number {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+
+.qz-question-text {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--text-h);
+}
+
+/* ───── Options ───── */
+
+.qz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.qz-option {
+  all: unset;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: var(--radius-sm);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  cursor: pointer;
+  transition: transform 0.15s, background 0.2s, border-color 0.2s;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.qz-option:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateX(4px);
+}
+
+.qz-option:disabled {
+  cursor: default;
+}
+
+.qz-option.qz-correct {
+  background: rgba(34, 197, 94, 0.12);
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.qz-option.qz-wrong {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.qz-option-letter {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text);
+  flex-shrink: 0;
+}
+
+.qz-correct .qz-option-letter {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+.qz-wrong .qz-option-letter {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+.qz-option-text {
+  flex: 1;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--text-h);
+}
+
+.qz-option-feedback {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* ───── Feedback Bar ───── */
+
+.qz-feedback-bar {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  animation: qzFadeIn 0.25s ease both;
+}
+
+.qz-correct-msg {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #22c55e;
+}
+
+.qz-wrong-msg {
+  font-size: 0.85rem;
+  color: var(--text);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.qz-next-btn {
+  all: unset;
+  cursor: pointer;
+  padding: 10px 24px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: white;
+  transition: transform 0.15s, box-shadow 0.2s;
+  text-align: center;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.qz-next-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ───── Finished Screen ───── */
+
+.qz-done {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 48px 32px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  box-shadow: var(--glass-shadow);
+  text-align: center;
+  width: 100%;
+  max-width: 480px;
+}
+
+.qz-done-icon {
+  font-size: 3.5rem;
+}
+
+.qz-done h2 {
+  margin: 0;
+}
+
+.qz-score-ring {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qz-score-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-h);
+  background: #0f0f1a;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qz-score-pct {
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.qz-done-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.qz-primary-btn {
+  all: unset;
+  cursor: pointer;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  text-align: center;
+  transition: transform 0.15s, box-shadow 0.2s;
+}
+
+.qz-primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
+}
+
+.qz-secondary-btn {
+  all: unset;
+  cursor: pointer;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  color: var(--text-h);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  text-align: center;
+  transition: background 0.2s;
+}
+
+.qz-secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ───── Review Mode ───── */
+
+.qz-review-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.qz-review-answers {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.qz-review-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.qz-review-correct .qz-review-label { color: #22c55e; }
+.qz-review-wrong .qz-review-label { color: #ef4444; }
+
+.qz-review-answers p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-h);
+}
+
+.qz-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.qz-nav-btn {
+  all: unset;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  color: var(--text-h);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  transition: background 0.2s;
+}
+
+.qz-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ───── Empty State ───── */
+
+.qz-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 64px 32px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  box-shadow: var(--glass-shadow);
+  text-align: center;
+}
+
+.qz-empty-icon {
+  font-size: 3rem;
+}
+
+.qz-empty h2 { margin: 0; }
+
+/* ───── Animations ───── */
+
+@keyframes qzFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ───── Responsive ───── */
+
+@media (max-width: 640px) {
+  .qz-card { padding: 24px 20px; }
+  .qz-question-text { font-size: 1rem; }
+  .qz-option { padding: 14px; }
+  .qz-option-text { font-size: 0.85rem; }
+  .qz-feedback-bar { flex-direction: column; text-align: center; }
+  .qz-wrong-msg { white-space: normal; }
+}

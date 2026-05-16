@@ -33,4 +33,18 @@ export interface ReviewEntry {
   lastReviewed: number | null
 }
 
-export type AppView = 'browse' | 'study'
+export type AppView = 'browse' | 'study' | 'quiz'
+
+export interface QuizQuestion {
+  flashcardId: string
+  question: string
+  correctAnswer: string
+  options: string[]     // [correctAnswer, distractor1, distractor2, distractor3] — shuffled
+  correctIndex: number  // index of correctAnswer after shuffle
+}
+
+export interface QuizResult {
+  question: QuizQuestion
+  selectedIndex: number
+  correct: boolean
+}
