@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from 'react'
+import { useState, useMemo, useCallback, useEffect } from 'react'
 import type { QuizResult } from '../types'
 import { generateQuiz } from '../data/quiz'
 import type { Flashcard } from '../types'
@@ -49,6 +49,31 @@ export function QuizView({ flashcards, topicTitle, topicIcon, topicColor, onBack
       setSelectedIndex(null)
     }
   }, [currentIndex, questions.length, selectedIndex, results, onComplete])
+
+  // ── Keyboard shortcuts ──
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (finished || reviewMode) return
+
+      // 1-4 to select options
+      const num = parseInt(e.key)
+      if (num >= 1 && num <= 4 && selectedIndex === null) {
+        const idx = num - 1
+        if (idx < currentQ.options.length) {
+          handleSelect(idx)
+        }
+        return
+      }
+
+      // Enter to confirm / next
+      if (e.key === 'Enter' && selectedIndex !== null) {
+        handleNext()
+      }
+    }
+
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [finished, reviewMode, selectedIndex, currentQ, handleSelect, handleNext])
 
   const handleRestart = useCallback(() => {
     setCurrentIndex(0)
@@ -173,6 +198,7 @@ export function QuizView({ flashcards, topicTitle, topicIcon, topicColor, onBack
           Question {currentIndex + 1}/{total}
         </div>
         <div className="qz-question-text">{currentQ.question}</div>
+        <p className="qz-keyboard-hint">⌨️ 1-4 pour choisir, Entrée pour valider</p>
       </div>
 
       <div className="qz-options">

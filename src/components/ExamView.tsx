@@ -293,6 +293,7 @@ export function ExamView({ onBack, onComplete }: Props) {
           <div />
         </header>
 
+        {scorePct === 100 && <div className="exam-confetti" />}
         <div className="exam-result-card">
           <div className="exam-result-ring" style={{
             background: `conic-gradient(#6366f1 ${scorePct}%, rgba(255,255,255,0.06) ${scorePct}%)`

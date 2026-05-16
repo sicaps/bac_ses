@@ -95,7 +95,7 @@ function App() {
     const topicInfo = getTopicName(activeTopicId)
     const topicFlashcards = flashcards.filter(f => f.topicId === activeTopicId)
     return (
-      <div className="app">
+      <div className="app" key="study">
         <FlashcardView
           flashcards={topicFlashcards}
           topicTitle={topicInfo.titleFr}
@@ -113,7 +113,7 @@ function App() {
     const topicInfo = getTopicName(activeTopicId)
     const topicFlashcards = flashcards.filter(f => f.topicId === activeTopicId)
     return (
-      <div className="app">
+      <div className="app" key="quiz">
         <QuizView
           flashcards={topicFlashcards}
           topicTitle={topicInfo.titleFr}
@@ -130,7 +130,7 @@ function App() {
     const reviewStats = getStats()
     const dueCount = flashcards.filter(f => isDue(f.id)).length
     return (
-      <div className="app">
+      <div className="app" key="dashboard">
         <Dashboard
           topicStatus={topicStatus}
           syllabus={syllabus}
@@ -147,7 +147,7 @@ function App() {
 
   if (view === 'glossary') {
     return (
-      <div className="app">
+      <div className="app" key="glossary">
         <GlossaryView onBack={goHome} />
       </div>
     )
@@ -155,7 +155,7 @@ function App() {
 
   if (view === 'exam') {
     return (
-      <div className="app">
+      <div className="app" key="exam">
         <ExamView onBack={goHome} />
       </div>
     )
@@ -168,7 +168,7 @@ function App() {
   const progressPct = total > 0 ? Math.round(((mastered + inProgress * 0.5) / total) * 100) : 0
 
   return (
-    <div className="app">
+    <div className="app" key="browse">
       <header className="header">
         <div className="header-glass">
           <h1>📚 bac_ses</h1>

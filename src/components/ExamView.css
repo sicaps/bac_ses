@@ -529,6 +529,67 @@
   background: rgba(255, 255, 255, 0.08);
 }
 
+/* ───── Confetti ───── */
+
+.exam-confetti {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.exam-confetti::before,
+.exam-confetti::after {
+  content: '🎉';
+  position: absolute;
+  font-size: 2rem;
+  animation: confettiFall 3s ease-out forwards;
+  opacity: 0;
+}
+
+.exam-confetti::before {
+  left: 20%;
+  top: -10%;
+  animation-delay: 0s;
+}
+
+.exam-confetti::after {
+  left: 70%;
+  top: -10%;
+  animation-delay: 0.5s;
+}
+
+.exam-confetti span {
+  display: none;
+}
+
+@keyframes confettiFall {
+  0% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh) rotate(720deg);
+  }
+}
+
+/* Add more confetti pieces via additional pseudo-elements on wrapper */
+.exam-result-card {
+  position: relative;
+}
+
+.exam-confetti::before { content: '🎉'; left: 15%; animation-delay: 0s; }
+.exam-confetti::after { content: '🎊'; left: 50%; animation-delay: 0.3s; }
+
+/* Extra confetti using additional generated content trick */
+.exam-confetti {
+  --c1: '🌟';
+  --c2: '✨';
+  --c3: '💫';
+}
+
 /* ───── Animations ───── */
 
 @keyframes examFadeIn {

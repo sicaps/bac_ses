@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from 'react'
+import { useState, useMemo, useCallback, useEffect } from 'react'
 import type { Flashcard, ReviewRating } from '../types'
 import './FlashcardView.css'
 
@@ -54,13 +54,36 @@ export function FlashcardView({ flashcards, topicTitle, topicIcon, topicColor, o
     setStudiedInSession(0)
   }, [])
 
+  // ── Keyboard shortcuts ──
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (finished || dueCards.length === 0) return
+
+      if (e.code === 'Space' || e.code === 'Enter') {
+        e.preventDefault()
+        if (!flipped) {
+          handleFlip()
+        }
+      }
+
+      if (flipped && currentCard) {
+        if (e.key === '1') handleRate('again')
+        else if (e.key === '2') handleRate('good')
+        else if (e.key === '3') handleRate('easy')
+      }
+    }
+
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [finished, dueCards.length, flipped, currentCard, handleFlip, handleRate])
+
   if (dueCards.length === 0) {
     return (
       <div className="fc-view">
         <div className="fc-empty">
           <span className="fc-empty-icon">🎉</span>
           <h2>Toutes les cartes sont étudiées !</h2>
-          <p>Toutes les flashcards pour ce thème ont été révisées.</p>
+          <p>Toutes les flashcards pour ce thème ont été révisées. Reviens plus tard quand elles seront à nouveau dues, ou teste-toi avec le quiz !</p>
           <button className="fc-back-btn" onClick={onBack}>← Retour aux thèmes</button>
         </div>
       </div>
@@ -99,7 +122,7 @@ export function FlashcardView({ flashcards, topicTitle, topicIcon, topicColor, o
           <div className="fc-card-front">
             <div className="fc-card-label">Question</div>
             <p className="fc-card-text">{currentCard.question}</p>
-            <p className="fc-card-hint">Cliquez pour voir la réponse</p>
+            <p className="fc-card-hint">Cliquez ou pressez Espace pour voir la réponse</p>
           </div>
           <div className="fc-card-back">
             <div className="fc-card-label" style={{ color: topicColor }}>Réponse</div>

@@ -79,6 +79,13 @@
   color: var(--text-h);
 }
 
+.qz-keyboard-hint {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  opacity: 0.5;
+  margin-top: 8px;
+}
+
 /* ───── Options ───── */
 
 .qz-options {
