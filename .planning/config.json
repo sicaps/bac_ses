@@ -1,0 +1,7 @@
+{
+  "mode": "interactive",
+  "parallelization": {
+    "enabled": true
+  },
+  "artifacts_dir": ".planning"
+}
