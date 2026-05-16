@@ -103,6 +103,17 @@
   transform: translateY(-1px);
 }
 
+.exam-header-btn {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.15));
+  border-color: rgba(99, 102, 241, 0.2);
+  color: #a78bfa;
+}
+
+.exam-header-btn:hover {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(139, 92, 246, 0.25));
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
 /* ───── Main ───── */
 
 .main {

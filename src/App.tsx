@@ -5,6 +5,7 @@ import { FlashcardView } from './components/FlashcardView'
 import { QuizView } from './components/QuizView'
 import { Dashboard } from './components/Dashboard'
 import { GlossaryView } from './components/GlossaryView'
+import { ExamView } from './components/ExamView'
 import { useReviewSystem } from './hooks/useReviewSystem'
 import { useQuizHistory } from './hooks/useQuizHistory'
 import type { TopicStatus } from './types'
@@ -28,7 +29,7 @@ function getTopicName(topicId: string): { titleFr: string; icon: string; color: 
 
 function App() {
   const [topicStatus, setTopicStatus] = useState<Map<string, TopicStatus>>(new Map())
-  const [view, setView] = useState<'browse' | 'study' | 'quiz' | 'dashboard' | 'glossary'>('browse')
+  const [view, setView] = useState<'browse' | 'study' | 'quiz' | 'dashboard' | 'glossary' | 'exam'>('browse')
   const [activeTopicId, setActiveTopicId] = useState<string | null>(null)
   const { isDue, rateCard, getStats } = useReviewSystem()
   const { recent: quizHistory, bestStreak, avgScore, addRecord } = useQuizHistory()
@@ -61,6 +62,11 @@ function App() {
   const openGlossary = useCallback(() => {
     setActiveTopicId(null)
     setView('glossary')
+  }, [])
+
+  const openExam = useCallback(() => {
+    setActiveTopicId(null)
+    setView('exam')
   }, [])
 
   const goHome = useCallback(() => {
@@ -147,6 +153,14 @@ function App() {
     )
   }
 
+  if (view === 'exam') {
+    return (
+      <div className="app">
+        <ExamView onBack={goHome} />
+      </div>
+    )
+  }
+
   const allTopics = syllabus.flatMap(t => t.topics)
   const total = allTopics.length
   const mastered = allTopics.filter(t => (topicStatus.get(t.id) ?? 'not-started') === 'mastered').length
@@ -169,6 +183,9 @@ function App() {
             <span className="stat"><span className="stat-dot not-started" /> {total - mastered - inProgress} à voir</span>
           </div>
           <div className="header-actions">
+            <button className="header-btn exam-header-btn" onClick={openExam}>
+              📝 Examen blanc
+            </button>
             <button className="header-btn" onClick={openGlossary}>
               📖 Glossaire
             </button>
