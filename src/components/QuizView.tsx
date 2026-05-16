@@ -41,7 +41,7 @@ export function QuizView({ flashcards, topicTitle, topicIcon, topicColor, onBack
     const nextIndex = currentIndex + 1
     if (nextIndex >= questions.length) {
       setFinished(true)
-      const finalScore = (selectedIndex !== null && results[results.length - 1]?.correct ? 1 : 0) + results.filter(r => r.correct).length
+      const finalScore = results.filter(r => r.correct).length
       const total = questions.length
       onComplete?.(finalScore, total)
     } else {

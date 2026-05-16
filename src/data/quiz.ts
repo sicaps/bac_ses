@@ -18,7 +18,8 @@ function shuffle<T>(arr: T[]): T[] {
  */
 function truncate(text: string, max = 80): string {
   if (text.length <= max) return text
-  return text.slice(0, text.lastIndexOf(' ', max)) + '…'
+  const cutoff = text.lastIndexOf(' ', max)
+  return cutoff > 0 ? text.slice(0, cutoff) + '…' : text.slice(0, max) + '…'
 }
 
 /**
