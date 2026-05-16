@@ -77,6 +77,26 @@
 .stat-dot.in-progress { background: var(--status-in-progress); }
 .stat-dot.not-started { background: var(--status-not-started); }
 
+.dashboard-btn {
+  all: unset;
+  cursor: pointer;
+  margin-top: 16px;
+  padding: 10px 24px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-h);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  transition: background 0.2s, transform 0.15s;
+}
+
+.dashboard-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
 /* ───── Main ───── */
 
 .main {

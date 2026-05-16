@@ -3,7 +3,9 @@ import { syllabus } from './data/syllabus'
 import { flashcards } from './data/flashcards'
 import { FlashcardView } from './components/FlashcardView'
 import { QuizView } from './components/QuizView'
+import { Dashboard } from './components/Dashboard'
 import { useReviewSystem } from './hooks/useReviewSystem'
+import { useQuizHistory } from './hooks/useQuizHistory'
 import type { TopicStatus } from './types'
 import './App.css'
 
@@ -25,9 +27,10 @@ function getTopicName(topicId: string): { titleFr: string; icon: string; color: 
 
 function App() {
   const [topicStatus, setTopicStatus] = useState<Map<string, TopicStatus>>(new Map())
-  const [view, setView] = useState<'browse' | 'study' | 'quiz'>('browse')
+  const [view, setView] = useState<'browse' | 'study' | 'quiz' | 'dashboard'>('browse')
   const [activeTopicId, setActiveTopicId] = useState<string | null>(null)
-  const { isDue, rateCard } = useReviewSystem()
+  const { isDue, rateCard, getStats } = useReviewSystem()
+  const { recent: quizHistory, bestStreak, avgScore, addRecord } = useQuizHistory()
 
   const cycleStatus = useCallback((topicId: string) => {
     setTopicStatus(prev => {
@@ -48,6 +51,23 @@ function App() {
     setActiveTopicId(topicId)
     setView('quiz')
   }, [])
+
+  const openDashboard = useCallback(() => {
+    setActiveTopicId(null)
+    setView('dashboard')
+  }, [])
+
+  const goHome = useCallback(() => {
+    setActiveTopicId(null)
+    setView('browse')
+  }, [])
+
+  const handleQuizComplete = useCallback((score: number, total: number) => {
+    if (activeTopicId) {
+      const topicInfo = getTopicName(activeTopicId)
+      addRecord({ topicId: activeTopicId, topicName: topicInfo.titleFr, score, total })
+    }
+  }, [activeTopicId, addRecord])
 
   const closeQuiz = useCallback(() => {
     setActiveTopicId(null)
@@ -87,7 +107,27 @@ function App() {
           topicTitle={topicInfo.titleFr}
           topicIcon={topicInfo.icon}
           topicColor={topicInfo.color}
+          onComplete={handleQuizComplete}
           onBack={closeQuiz}
+        />
+      </div>
+    )
+  }
+
+  if (view === 'dashboard') {
+    const reviewStats = getStats()
+    const dueCount = flashcards.filter(f => isDue(f.id)).length
+    return (
+      <div className="app">
+        <Dashboard
+          topicStatus={topicStatus}
+          syllabus={syllabus}
+          reviewStats={reviewStats}
+          dueCount={dueCount}
+          quizHistory={quizHistory}
+          bestStreak={bestStreak}
+          avgScore={avgScore}
+          onBack={goHome}
         />
       </div>
     )
@@ -114,6 +154,9 @@ function App() {
             <span className="stat"><span className="stat-dot in-progress" /> {inProgress} en cours</span>
             <span className="stat"><span className="stat-dot not-started" /> {total - mastered - inProgress} à voir</span>
           </div>
+          <button className="dashboard-btn" onClick={openDashboard}>
+            📊 Tableau de bord
+          </button>
         </div>
       </header>
 

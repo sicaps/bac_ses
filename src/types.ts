@@ -33,7 +33,15 @@ export interface ReviewEntry {
   lastReviewed: number | null
 }
 
-export type AppView = 'browse' | 'study' | 'quiz'
+export type AppView = 'browse' | 'study' | 'quiz' | 'dashboard'
+
+export interface QuizRecord {
+  date: number
+  topicId: string
+  topicName: string
+  score: number
+  total: number
+}
 
 export interface QuizQuestion {
   flashcardId: string

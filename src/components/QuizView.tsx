@@ -10,9 +10,10 @@ interface Props {
   topicIcon: string
   topicColor: string
   onBack: () => void
+  onComplete?: (score: number, total: number) => void
 }
 
-export function QuizView({ flashcards, topicTitle, topicIcon, topicColor, onBack }: Props) {
+export function QuizView({ flashcards, topicTitle, topicIcon, topicColor, onBack, onComplete }: Props) {
   const questions = useMemo(() => generateQuiz(flashcards), [flashcards])
 
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -40,11 +41,14 @@ export function QuizView({ flashcards, topicTitle, topicIcon, topicColor, onBack
     const nextIndex = currentIndex + 1
     if (nextIndex >= questions.length) {
       setFinished(true)
+      const finalScore = (selectedIndex !== null && results[results.length - 1]?.correct ? 1 : 0) + results.filter(r => r.correct).length
+      const total = questions.length
+      onComplete?.(finalScore, total)
     } else {
       setCurrentIndex(nextIndex)
       setSelectedIndex(null)
     }
-  }, [currentIndex, questions.length])
+  }, [currentIndex, questions.length, selectedIndex, results, onComplete])
 
   const handleRestart = useCallback(() => {
     setCurrentIndex(0)
