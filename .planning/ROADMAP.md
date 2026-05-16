@@ -16,7 +16,7 @@
 **Requirements:** REQ-003  
 
 ## Phase 4 — Progress Dashboard
-**Status:** pending  
+**Status:** done ✅  
 **Goal:** Overview dashboard with mastery stats, review queue, and readiness estimate.  
 **Requirements:** REQ-004  
 

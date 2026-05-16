@@ -4,5 +4,5 @@
 **Current phase:** Phase 1 — Foundation & Topic Browser  
 **Phase status:** done ✅  
 
-**Last action:** Phase 3 implemented — MCQ quiz mode with scoring and wrong-answer review  
-**Next action:** Discuss phase 4 implementation decisions (progress dashboard)
+**Last action:** Phase 4 implemented — dashboard with readiness score, mastery stats, review queue, quiz analytics  
+**Next action:** Discuss phase 5 implementation decisions (key concepts glossary)
