@@ -4,6 +4,7 @@ import { flashcards } from './data/flashcards'
 import { FlashcardView } from './components/FlashcardView'
 import { QuizView } from './components/QuizView'
 import { Dashboard } from './components/Dashboard'
+import { GlossaryView } from './components/GlossaryView'
 import { useReviewSystem } from './hooks/useReviewSystem'
 import { useQuizHistory } from './hooks/useQuizHistory'
 import type { TopicStatus } from './types'
@@ -27,7 +28,7 @@ function getTopicName(topicId: string): { titleFr: string; icon: string; color: 
 
 function App() {
   const [topicStatus, setTopicStatus] = useState<Map<string, TopicStatus>>(new Map())
-  const [view, setView] = useState<'browse' | 'study' | 'quiz' | 'dashboard'>('browse')
+  const [view, setView] = useState<'browse' | 'study' | 'quiz' | 'dashboard' | 'glossary'>('browse')
   const [activeTopicId, setActiveTopicId] = useState<string | null>(null)
   const { isDue, rateCard, getStats } = useReviewSystem()
   const { recent: quizHistory, bestStreak, avgScore, addRecord } = useQuizHistory()
@@ -55,6 +56,11 @@ function App() {
   const openDashboard = useCallback(() => {
     setActiveTopicId(null)
     setView('dashboard')
+  }, [])
+
+  const openGlossary = useCallback(() => {
+    setActiveTopicId(null)
+    setView('glossary')
   }, [])
 
   const goHome = useCallback(() => {
@@ -133,6 +139,14 @@ function App() {
     )
   }
 
+  if (view === 'glossary') {
+    return (
+      <div className="app">
+        <GlossaryView onBack={goHome} />
+      </div>
+    )
+  }
+
   const allTopics = syllabus.flatMap(t => t.topics)
   const total = allTopics.length
   const mastered = allTopics.filter(t => (topicStatus.get(t.id) ?? 'not-started') === 'mastered').length
@@ -154,9 +168,14 @@ function App() {
             <span className="stat"><span className="stat-dot in-progress" /> {inProgress} en cours</span>
             <span className="stat"><span className="stat-dot not-started" /> {total - mastered - inProgress} à voir</span>
           </div>
-          <button className="dashboard-btn" onClick={openDashboard}>
-            📊 Tableau de bord
-          </button>
+          <div className="header-actions">
+            <button className="header-btn" onClick={openGlossary}>
+              📖 Glossaire
+            </button>
+            <button className="header-btn" onClick={openDashboard}>
+              📊 Tableau de bord
+            </button>
+          </div>
         </div>
       </header>
 

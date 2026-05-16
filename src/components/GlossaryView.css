@@ -1,0 +1,289 @@
+/* ───── Glossary Layout ───── */
+
+.glo-view {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: gloFadeIn 0.35s ease both;
+}
+
+.glo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.glo-header h1 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.glo-back-btn {
+  all: unset;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--text);
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  transition: background 0.2s;
+}
+
+.glo-back-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ───── Search ───── */
+
+.glo-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--glass-shadow);
+  transition: border-color 0.2s;
+}
+
+.glo-search:focus-within {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.glo-search-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.glo-search-input {
+  all: unset;
+  flex: 1;
+  font-size: 1rem;
+  color: var(--text-h);
+  font-family: var(--sans);
+}
+
+.glo-search-input::placeholder {
+  color: var(--text-dim);
+}
+
+.glo-clear-btn {
+  all: unset;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.glo-clear-btn:hover {
+  color: var(--text-h);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ───── Theme Tabs ───── */
+
+.glo-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.glo-tab {
+  all: unset;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.glo-tab:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.glo-tab.glo-active {
+  color: var(--text-h);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ───── Count ───── */
+
+.glo-count {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+/* ───── Entry Card ───── */
+
+.glo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.glo-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--glass-shadow);
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.glo-card:hover {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+}
+
+.glo-card-header {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 16px;
+  cursor: pointer;
+  border-left: 3px solid;
+  box-sizing: border-box;
+  transition: background 0.2s;
+}
+
+.glo-card-header:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.glo-card-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.glo-theme-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.glo-term-fr {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.glo-term-en {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+.glo-expand-icon {
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.glo-expand-icon.glo-open {
+  transform: rotate(180deg);
+}
+
+/* ───── Expanded Body ───── */
+
+.glo-card-body {
+  padding: 0 16px 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  animation: gloSlideIn 0.2s ease both;
+}
+
+.glo-section {
+  margin-top: 14px;
+}
+
+.glo-section-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.glo-section p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.glo-example {
+  font-style: italic;
+  color: var(--text-dim) !important;
+}
+
+/* ───── Related Chips ───── */
+
+.glo-related {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.glo-related-chip {
+  all: unset;
+  cursor: pointer;
+  padding: 5px 12px;
+  border-radius: 14px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-h);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.glo-related-chip:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+/* ───── Empty ───── */
+
+.glo-empty {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--text-dim);
+}
+
+/* ───── Animations ───── */
+
+@keyframes gloFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gloSlideIn {
+  from { opacity: 0; padding-top: 0; }
+  to { opacity: 1; padding-top: 0; }
+}
