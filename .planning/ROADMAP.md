@@ -21,7 +21,7 @@
 **Requirements:** REQ-004  
 
 ## Phase 5 — Key Concepts Glossary
-**Status:** pending  
+**Status:** done ✅  
 **Goal:** Searchable glossary of SES terminology browsable by theme.  
 **Requirements:** REQ-005  
 
