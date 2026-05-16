@@ -262,7 +262,7 @@
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--text-h);
-  background: #0f0f1a;
+  background: var(--card-inset-bg);
   width: 76px;
   height: 76px;
   border-radius: 50%;

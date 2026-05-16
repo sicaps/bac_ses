@@ -8,6 +8,7 @@ import { GlossaryView } from './components/GlossaryView'
 import { ExamView } from './components/ExamView'
 import { useReviewSystem } from './hooks/useReviewSystem'
 import { useQuizHistory } from './hooks/useQuizHistory'
+import { useTheme } from './hooks/useTheme'
 import type { TopicStatus } from './types'
 import './App.css'
 
@@ -33,6 +34,7 @@ function App() {
   const [activeTopicId, setActiveTopicId] = useState<string | null>(null)
   const { isDue, rateCard, getStats } = useReviewSystem()
   const { recent: quizHistory, bestStreak, avgScore, addRecord } = useQuizHistory()
+  const { theme, toggle: toggleTheme } = useTheme()
 
   const cycleStatus = useCallback((topicId: string) => {
     setTopicStatus(prev => {
@@ -183,6 +185,9 @@ function App() {
             <span className="stat"><span className="stat-dot not-started" /> {total - mastered - inProgress} à voir</span>
           </div>
           <div className="header-actions">
+            <button className="header-btn theme-btn" onClick={toggleTheme} title="Basculer le thème">
+              {theme === 'dark' ? '☀️' : '🌙'}
+            </button>
             <button className="header-btn exam-header-btn" onClick={openExam}>
               📝 Examen blanc
             </button>

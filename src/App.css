@@ -114,6 +114,15 @@
   border-color: rgba(99, 102, 241, 0.4);
 }
 
+.theme-btn {
+  font-size: 1.1rem;
+  padding: 8px 14px;
+  width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* ───── Main ───── */
 
 .main {
@@ -194,7 +203,7 @@
   font-size: 0.75rem;
   font-weight: 600;
   color: var(--text-h);
-  background: #0f0f1a;
+  background: var(--card-inset-bg);
   width: 36px;
   height: 36px;
   border-radius: 50%;

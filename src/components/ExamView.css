@@ -418,7 +418,7 @@
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--text-h);
-  background: #0f0f1a;
+  background: var(--card-inset-bg);
   width: 90px;
   height: 90px;
   border-radius: 50%;
